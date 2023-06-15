@@ -6,7 +6,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const IndexPage: React.FC<PageProps> = () => {
-  AOS.init();
+  React.useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <main className="bg-white min-h-screen scroll-smooth bg-gradient-to-t from-indigo-50 to-white">
       <Header />
