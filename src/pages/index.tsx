@@ -4,6 +4,7 @@ import Header from '../components/header';
 import Hero from '../components/hero';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import About from '../components/about';
 
 const IndexPage: React.FC<PageProps> = () => {
   React.useEffect(() => {
@@ -11,9 +12,10 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <main className="bg-white min-h-screen scroll-smooth bg-gradient-to-t from-indigo-50 to-white">
+    <main className="min-h-screen pb-32">
       <Header />
       <Hero />
+      <About />
     </main>
   );
 };
