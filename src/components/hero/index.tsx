@@ -8,36 +8,46 @@ export default function Hero({}: Props) {
   return (
     <section
       id="home"
-      className="flex flex-col items-center justify-center"
+      className="container mx-auto flex flex-col items-start justify-center"
       style={{ minHeight: 'calc(100vh - 100px)' }}
     >
-      <div
-        data-aos="flip-up"
-        data-aos-duration="500"
-        className="w-32 h-32 rounded-full bg-gradient-to-br from-red-50 to-indigo-100"
-      />
-      <div
-        data-aos="fade-up"
-        data-aos-duration="500"
-        className="mt-10 text-lg text-slate-600"
-      >
-        Hello, I'm
+      <div className="flex flex-col md:flex-row items-center w-full">
+        <div
+          data-aos="flip-up"
+          data-aos-duration="500"
+          className="w-20 h-20 rounded-full bg-gradient-to-br from-red-50 to-indigo-100"
+        >
+          <img
+            src="/images/ikbal.jpg"
+            alt="ikbal"
+            className="w-full rounded-full"
+          />
+        </div>
+        <div className="flex flex-col ml-0 md:ml-8 mt-5 md:mt-0">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            className="text-2xl text-slate-600 font-medium"
+          >
+            Ikbal Mohamad
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="text-lg text-slate-500 font-light"
+          >
+            Front-end Developer
+          </div>
+        </div>
       </div>
       <div
         data-aos="fade-up"
         data-aos-duration="700"
-        className="mt-1 font-medium text-5xl text-center text-slate-700"
+        className="p-5 mt-8 font-light text-4xl md:text-7xl text-center md:text-left text-slate-800"
       >
-        Ikbal Mohamad
+        Hey there! I’m a creative web & mobile developer from Indonesia.
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        className="mt-5 text-2xl text-slate-500"
-      >
-        A passionate Front-end Developer
-      </div>
-      <div className="flex items-center mt-8">
+      <div className="flex items-center mt-8 px-5">
         <a
           data-aos="fade-up"
           data-aos-duration="1200"
@@ -57,13 +67,13 @@ export default function Hero({}: Props) {
           <AiFillGithub size={30} />
         </a>
       </div>
-      <div className="mt-10 flex items-center justify-center">
+      <div className="mt-10 flex items-center justify-center px-2">
         <a
           target="_blank"
           href="https://www.cakeresume.com/s--tioUbMdRUsiNVO24ADJUMg--/ikbal-hikmat"
           data-aos="fade-up"
           data-aos-duration="1500"
-          className="bg-gradient-to-br from-indigo-500 to-blue-500 px-5 py-3 rounded-full text-white mx-3 hover:shadow-lg hover:to-indigo-500"
+          className="bg-gradient-to-br text-center from-indigo-500 to-blue-500 px-5 py-3 rounded-full text-white mx-3 hover:shadow-lg hover:to-indigo-500"
         >
           Download Resume
         </a>
@@ -71,7 +81,7 @@ export default function Hero({}: Props) {
           href="#about"
           data-aos="fade-up"
           data-aos-duration="1500"
-          className="text-indigo-600 px-5 py-3 rounded-full mx-3 border border-indigo-500 hover:bg-indigo-500 hover:text-white hover:shadow-lg transition-all flex items-center"
+          className="text-indigo-600 text-center px-5 py-3 rounded-full mx-3 border border-indigo-500 hover:bg-indigo-500 hover:text-white hover:shadow-lg transition-all flex items-center"
         >
           <span className="mr-3">Explore More</span>
           <HiChevronDown size={20} />

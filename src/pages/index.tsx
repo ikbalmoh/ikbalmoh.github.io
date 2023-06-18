@@ -5,6 +5,7 @@ import Hero from '../components/hero';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import About from '../components/about';
+import Projects from '../components/projects';
 
 const IndexPage: React.FC<PageProps> = () => {
   React.useEffect(() => {
@@ -12,10 +13,11 @@ const IndexPage: React.FC<PageProps> = () => {
   }, []);
 
   return (
-    <main className="min-h-screen pb-32">
+    <main className="min-h-screen pb-32 flex flex-col">
       <Header />
       <Hero />
       <About />
+      <Projects />
     </main>
   );
 };

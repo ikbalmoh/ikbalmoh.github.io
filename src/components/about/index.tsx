@@ -34,7 +34,10 @@ const skillsets = [
 
 export default function About({}: Props) {
   return (
-    <section id="about" className="container mx-auto max-w-5xl">
+    <section
+      id="about"
+      className="container mx-auto max-w-5xl mt-16 scroll-m-28"
+    >
       <div
         data-aos="fade-up"
         data-aos-duration="200"
@@ -45,11 +48,11 @@ export default function About({}: Props) {
       <div
         data-aos="fade-up"
         data-aos-duration="400"
-        className="text-center text-xl text-slate-700"
+        className="text-center text-2xl text-slate-700"
       >
         <p>
-          Hi, I'm a passionate front-end developer from Indonesia with 5 years
-          of experience
+          I'm a creative & passionate front-end developer with 5 years of
+          experience
           <br />
           building scalable web and mobile applications.
         </p>
@@ -69,8 +72,8 @@ export default function About({}: Props) {
       <div className="flex flex-col md:flex-row items-start justify-center flex-wrap">
         {skillsets.map((skill, idx) => (
           <div
-            data-aos="flip-up"
-            data-aos-duration="600"
+            data-aos="fade-up"
+            data-aos-duration={idx * 100}
             className="px-3 py-2 rounded-xl border border-slate-200 mx-2"
             key={idx}
           >

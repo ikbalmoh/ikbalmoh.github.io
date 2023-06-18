@@ -1,0 +1,33 @@
+[
+  {
+    "title": "BMKG Maritim",
+    "year": 2022,
+    "description": "A brand new BMKG's maritim website, displaying a weather forecasts",
+    "image": "/images/projects/bmkg.png",
+    "tags": ["next.js", "react.js", "tailwind", "leaflet"],
+    "link": "https://maritim-bmkg.vercel.app/"
+  },
+  {
+    "title": "Pertamina Merchant Dashboard",
+    "year": 2022,
+    "description": "Dashboard for pertamina merchants",
+    "image": "/images/projects/pertamina-merchant.png",
+    "tags": ["react.js"]
+  },
+  {
+    "title": "Sapakat",
+    "year": 2022,
+    "description": "Well being communinity map",
+    "image": "/images/projects/sapakat.png",
+    "tags": ["next.js", "react.js", "tailwind", "leaflet"],
+    "link": "https://dms-sapakat.kabgarut.com"
+  },
+  {
+    "title": "Github Search",
+    "year": 2023,
+    "description": "App for search github search & repositories",
+    "image": "/images/projects/github-search.png",
+    "tags": ["exploration", "next.js", "react.js", "tailwind"],
+    "link": "https://iikmoh.github.io/github-search"
+  }
+]
