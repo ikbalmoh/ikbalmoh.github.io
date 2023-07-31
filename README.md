@@ -1,49 +1,80 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
 
-## 🚀 Quick start
+# React Tailwindcss Boilerplate build with Vite
 
-1.  **Create a Gatsby site.**
+This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+## What is inside?
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+This project uses many tools like:
 
-2.  **Start developing.**
+- [Vite](https://vitejs.dev)
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Vitest](https://vitest.dev)
+- [Testing Library](https://testing-library.com)
+- [Tailwindcss](https://tailwindcss.com)
+- [Eslint](https://eslint.org)
+- [Prettier](https://prettier.io)
 
-    Navigate into your new site’s directory and start it up.
+## Getting Started
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+### Install
 
-3.  **Open the code and start customizing!**
+Create the project.
 
-    Your site is now running at http://localhost:8000!
+```bash
+npx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
+```
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+Access the project directory.
 
-4.  **Learn more**
+```bash
+cd my-app
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+Install dependencies.
 
-## 🚀 Quick start (Netlify)
+```bash
+pnpm install
+```
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+Serve with hot reload at <http://localhost:5173>.
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+```bash
+pnpm run dev
+```
+
+### Lint
+
+```bash
+pnpm run lint
+```
+
+### Typecheck
+
+```bash
+pnpm run typecheck
+```
+
+### Build
+
+```bash
+pnpm run build
+```
+
+### Test
+
+```bash
+pnpm run test
+```
+
+View and interact with your tests via UI.
+
+```bash
+pnpm run test:ui
+```
+
+## License
+
+This project is licensed under the MIT License.

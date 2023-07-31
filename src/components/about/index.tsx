@@ -1,47 +1,45 @@
-import React from 'react';
-
-type Props = {};
+import React from 'react'
 
 const skillsets = [
   {
-    label: 'Typescript',
+    label: 'Typescript'
   },
   {
-    label: 'Javascript',
+    label: 'Javascript'
   },
   {
-    label: 'Dart',
+    label: 'Dart'
   },
   {
-    label: 'PHP',
+    label: 'PHP'
   },
   {
-    label: 'HTML',
+    label: 'HTML'
   },
   {
-    label: 'CSS',
+    label: 'CSS'
   },
   {
-    label: 'Next.js',
+    label: 'Next.js'
   },
   {
-    label: 'React.js',
+    label: 'React.js'
   },
   {
-    label: 'Vue.js',
-  },
-];
+    label: 'Vue.js'
+  }
+]
 
-export default function About({}: Props) {
+export default function About() {
   return (
     <section
       id="about"
-      className="container mx-auto max-w-5xl mt-16 scroll-m-28"
+      className="container mx-auto mt-16 max-w-5xl scroll-m-28"
     >
       <div
         data-aos="fade-up"
         data-aos-duration="200"
-        className="mb-5 text-2xl font-semibold text-center text-indigo-600"
+        className="mb-5 text-center text-2xl font-semibold text-indigo-600"
       >
         About
       </div>
@@ -51,7 +49,7 @@ export default function About({}: Props) {
         className="text-center text-2xl text-slate-700"
       >
         <p>
-          I'm a creative & passionate front-end developer with 5 years of
+          I&apos;m a creative & passionate front-end developer with 5 years of
           experience
           <br />
           building scalable web and mobile applications.
@@ -65,16 +63,16 @@ export default function About({}: Props) {
       <div
         data-aos="fade-up"
         data-aos-duration="500"
-        className="font-semibold text-lg text-center mt-8 mb-5"
+        className="mb-5 mt-8 text-center text-lg font-semibold"
       >
         Skillsets
       </div>
-      <div className="flex flex-col md:flex-row items-start justify-center flex-wrap">
+      <div className="flex flex-col flex-wrap items-start justify-center md:flex-row">
         {skillsets.map((skill, idx) => (
           <div
             data-aos="fade-up"
             data-aos-duration={idx * 100}
-            className="px-3 py-2 rounded-xl border border-slate-200 mx-2"
+            className="mx-2 rounded-xl border border-slate-200 px-3 py-2"
             key={idx}
           >
             {skill.label}
@@ -82,5 +80,5 @@ export default function About({}: Props) {
         ))}
       </div>
     </section>
-  );
+  )
 }

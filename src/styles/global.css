@@ -1,7 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply scroll-smooth bg-gradient-to-b to-indigo-50 from-white bg-cover scroll-m-12;
-}
