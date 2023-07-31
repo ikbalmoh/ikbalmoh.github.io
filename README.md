@@ -1,36 +1,21 @@
-![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
+# Portfolio build with Vite
 
-# React Tailwindcss Boilerplate build with Vite
-
-This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
-
-## What is inside?
-
-This project uses many tools like:
-
-- [Vite](https://vitejs.dev)
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Vitest](https://vitest.dev)
-- [Testing Library](https://testing-library.com)
-- [Tailwindcss](https://tailwindcss.com)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
+This is a web portfolio build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint, Prettier and gh-pages.
 
 ## Getting Started
 
 ### Install
 
-Create the project.
+Clone the project.
 
 ```bash
-npx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
+git clone git@github.com:iikmoh/iikmoh.github.io.git my-portfolio
 ```
 
 Access the project directory.
 
 ```bash
-cd my-app
+cd my-portfolio
 ```
 
 Install dependencies.
@@ -73,6 +58,13 @@ View and interact with your tests via UI.
 
 ```bash
 pnpm run test:ui
+```
+
+
+### Deploy
+
+```bash
+pnpm run deploy
 ```
 
 ## License
