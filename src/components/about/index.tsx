@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="container mx-auto mt-16 max-w-5xl scroll-m-28"
+      className="container mx-auto mt-16 min-h-screen max-w-5xl scroll-m-28"
     >
       <div
         data-aos="fade-up"

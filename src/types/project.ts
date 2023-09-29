@@ -5,4 +5,5 @@ export type Project = {
   image: string
   link?: string
   tags: string[]
+  bg?: string
 }

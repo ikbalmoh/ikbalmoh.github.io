@@ -5,7 +5,8 @@
     "description": "A brand new BMKG's maritim website, displaying a weather forecasts",
     "image": "/images/projects/bmkg.png",
     "tags": ["next.js", "react.js", "tailwind", "leaflet"],
-    "link": "https://maritim-bmkg.vercel.app/"
+    "link": "https://maritim-bmkg.vercel.app/",
+    "bg": "bg-green"
   },
   {
     "title": "Pertamina Merchant Dashboard",

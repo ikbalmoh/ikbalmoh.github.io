@@ -1,33 +1,30 @@
 import React from 'react'
 
 const links = [
-  { id: 'about', label: 'About' },
-  { id: 'work', label: 'Work' }
+  { id: 'work', label: 'Work' },
+  { id: 'about', label: 'About' }
 ]
 
 export default function Header() {
   return (
-    <nav className="sticky top-0 z-10 flex  items-center backdrop-blur-md">
-      <div className="flex w-full items-center justify-between px-5 py-8 md:px-10">
-        <a
-          href="#home"
-          className="select-none bg-gradient-to-br from-indigo-700 to-blue-500 bg-clip-text text-2xl text-indigo-600"
-        >
-          <span className="font-semibold">iik</span>
-          <span className="font-medium">moh</span>
+    <nav className="sticky top-0 z-10 mx-auto flex w-full max-w-none items-center bg-white/60 backdrop-blur-md md:max-w-6xl">
+      <div className="flex w-full items-center justify-between gap-4 border-b px-4 py-2 md:px-0">
+        <a href="#home" className="select-none ">
+          <h1 className="bg-gradient-to-r from-black to-blue-800 bg-clip-text text-xl font-semibold text-transparent md:text-2xl">
+            IkbalMoh
+          </h1>
         </a>
-        <ul className="hidden items-center justify-end md:flex md:flex-row">
+        <div className="hidden items-center justify-end md:flex md:flex-row">
           {links.map((link) => (
-            <li key={link.id}>
-              <a
-                className="rounded-lg px-6 py-3 font-normal text-gray-700 transition-all hover:bg-indigo-100/50 hover:text-indigo-600"
-                href={`#${link.id}`}
-              >
-                {link.label}
-              </a>
-            </li>
+            <a
+              key={link.id}
+              className="relative rounded-md bg-transparent px-5 py-2 text-sm text-gray-500 transition-colors duration-200 hover:bg-gray-300/80 hover:text-gray-700"
+              href={`#${link.id}`}
+            >
+              {link.label}
+            </a>
           ))}
-        </ul>
+        </div>
       </div>
     </nav>
   )

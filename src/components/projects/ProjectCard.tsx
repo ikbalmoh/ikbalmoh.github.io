@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { HiChevronRight } from 'react-icons/hi'
 import { Project } from 'types/project'
+import styles from './styles.module.css'
+import { classNames } from 'utils'
 
 type Props = {
   project: Project
@@ -12,13 +14,9 @@ export default function ProjectCard({ project }: Props) {
     <div
       onMouseEnter={() => setActive(true)}
       onMouseLeave={() => setActive(false)}
-      className="relative flex h-64 items-end rounded-2xl bg-slate-200/60 px-10"
+      className={classNames(styles.root, project.bg ? styles[project.bg] : '')}
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full rounded-t-lg object-contain"
-      />
+      <img src={project.image} alt={project.title} />
       {active ? (
         <div className="absolute inset-0 z-10 flex flex-col justify-between rounded-2xl bg-amber-100/30 px-7 py-5 backdrop-blur-sm">
           <div className="flex flex-col">
