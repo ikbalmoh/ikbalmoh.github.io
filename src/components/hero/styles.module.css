@@ -1,28 +1,3 @@
-@keyframes animate-wave {
-  0% {
-    transform: rotateZ(0);
-  }
-  50% {
-    transform: rotateZ(45deg);
-  }
-  100% {
-    transform: rotateZ(0);
-  }
-}
-
-.wave {
-  /* animation: animate-wave 2s ease-in-out infinite; */
-}
-
-@keyframes intro-gradient {
-  0% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-
 @keyframes rolling-text {
   0% {
     transform: translateY(0rem);
@@ -53,9 +28,6 @@
   will-change: transform;
 }
 
-.heading {
-}
-
 .client-overlay {
   @apply absolute inset-0 z-[1];
   background-image: linear-gradient(
@@ -67,7 +39,7 @@
   );
 }
 
-@keyframes marquee-horizontal {
+@keyframes client-marquee {
   0% {
     transform: translateX(0) translateZ(0);
   }
@@ -78,7 +50,37 @@
 
 .client-marquee {
   @apply flex shrink-0 grow-0 basis-auto items-center py-0.5 gap-3 grayscale;
-  animation: marquee-horizontal 15s linear infinite;
-  -webkit-animation: marquee-horizontal 15s linear infinite;
+  -webkit-animation: client-marquee 15s linear infinite;
+  animation: client-marquee 15s linear infinite;
   will-change: transform;
+}
+
+.hero {
+  @apply transition-all duration-500 will-change-transform opacity-100;
+  animation: hero-fade-out 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll-hero) * -1s);
+
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes hero-fade-out {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+    scale: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-125px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-125px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-300px);
+  }
 }

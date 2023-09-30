@@ -1,12 +1,12 @@
-import { useLottie } from 'lottie-react'
+import { LottieOptions, useLottie } from 'lottie-react'
 import hero from '../../assets/hero.json'
 
-const style = {
+const style: React.CSSProperties = {
   height: 300
 }
 
 const LottieAnimation = () => {
-  const options = {
+  const options: LottieOptions = {
     animationData: hero,
     loop: true,
     autoplay: true

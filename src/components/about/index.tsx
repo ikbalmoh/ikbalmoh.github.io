@@ -34,14 +34,14 @@ export default function About() {
   return (
     <section
       id="about"
-      className="container mx-auto mt-16 min-h-screen max-w-5xl scroll-m-28"
+      className="container mx-auto min-h-screen max-w-5xl scroll-m-16 py-10"
     >
       <div
         data-aos="fade-up"
         data-aos-duration="200"
-        className="mb-5 text-center text-2xl font-semibold text-indigo-600"
+        className="my-6 text-center text-2xl font-semibold "
       >
-        About
+        About Me
       </div>
       <div
         data-aos="fade-up"
@@ -67,12 +67,12 @@ export default function About() {
       >
         Skillsets
       </div>
-      <div className="flex flex-col flex-wrap items-start justify-center md:flex-row">
+      <div className="flex flex-row flex-wrap items-start justify-center gap-3">
         {skillsets.map((skill, idx) => (
           <div
             data-aos="fade-up"
             data-aos-duration={idx * 100}
-            className="mx-2 rounded-xl border border-slate-200 px-3 py-2"
+            className="rounded-xl border border-slate-200 px-3 py-2"
             key={idx}
           >
             {skill.label}
