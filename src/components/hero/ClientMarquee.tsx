@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
+import { classNames } from 'utils'
 
 const clients: Array<string> = [
   'telkom',
@@ -13,7 +14,7 @@ const clients: Array<string> = [
 
 function Clients() {
   return (
-    <div className={styles['client-marquee']}>
+    <div className={styles['marquee-track']}>
       {clients.map((client) => (
         <img
           key={client}
@@ -28,7 +29,12 @@ function Clients() {
 
 const ClientMarquee = () => {
   return (
-    <div className="mx-auto mt-5 flex w-full max-w-3xl flex-col items-start justify-center py-1 md:mt-10 md:flex-row md:items-center">
+    <div
+      className={classNames(
+        styles['client-marquee'],
+        'mx-auto mt-5 flex w-full max-w-3xl flex-col items-start justify-center py-1 md:mt-10 md:flex-row md:items-center'
+      )}
+    >
       <h2 className="mr-0 flex-1 whitespace-nowrap font-medium text-gray-700 md:mr-6">
         Collaborated with
       </h2>

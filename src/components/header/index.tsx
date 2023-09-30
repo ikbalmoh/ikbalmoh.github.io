@@ -7,8 +7,8 @@ const links = [
 
 export default function Header() {
   return (
-    <nav className="sticky top-0 z-10 flex h-16 w-full items-center bg-white/40 backdrop-blur-md">
-      <div className="mx-auto flex w-full max-w-none items-center justify-between gap-4 px-4 py-3.5 md:max-w-6xl lg:px-0">
+    <nav className="sticky top-0 z-10 flex h-14 w-full items-center bg-white/40 backdrop-blur-md md:h-16">
+      <div className="mx-auto flex h-14 w-full max-w-none items-center justify-between gap-4 border-b px-4 md:h-16 md:max-w-6xl md:px-5 xl:px-0">
         <a href="#home" className="select-none ">
           <h1 className="bg-gradient-to-r from-black to-blue-800 bg-clip-text text-xl font-semibold text-transparent md:text-2xl">
             IkbalMoh
