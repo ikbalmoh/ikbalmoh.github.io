@@ -1,4 +1,4 @@
-import { LottieOptions, useLottie } from 'lottie-react'
+import { LottieOptions, useLottie, useLottieInteractivity } from 'lottie-react'
 import hero from '../../assets/hero.json'
 
 const style: React.CSSProperties = {
@@ -12,9 +12,20 @@ const LottieAnimation = () => {
     autoplay: true
   }
 
-  const { View } = useLottie(options, style)
+  const lottieObj = useLottie(options, style)
+  const Animation = useLottieInteractivity({
+    lottieObj,
+    mode: 'cursor',
+    actions: [
+      {
+        position: { x: [0, 1], y: [0, 1] },
+        type: 'seek',
+        frames: [0, 180]
+      }
+    ]
+  })
 
-  return View
+  return Animation
 }
 
 export default LottieAnimation
