@@ -24,31 +24,22 @@
 
 .client-marquee {
   will-change: opacity;
-  -webkit-animation: marquee-fade-out 1s linear;
-  animation: marquee-fade-out 1s linear;
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-  -webkit-animation-delay: calc(var(--scroll-hero) * -1s);
-  animation-delay: calc(var(--scroll-hero) * -1s);
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-fill-mode: both;
+  -webkit-animation: marquee-fade-out linear both;
+  animation: marquee-fade-out linear both;
+  animation-timeline: view(block);
+  animation-range: contain 0% exit 100%;
 }
 
 .hero {
-  @apply opacity-100;
+  transform: translateY(0px);
+  opacity: 1;
+  scale: 1;
   transition: opacity, transform;
   will-change: transform, opacity;
-  -webkit-animation: hero-fade-out 1s linear;
-  -webkit-animation-play-state: paused;
-  -webkit-animation-delay: calc(var(--scroll-hero) * -1s);
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-fill-mode: both;
-  animation: hero-fade-out 1s linear;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll-hero) * -1s);
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
+  -webkit-animation: hero-fade-out linear both;
+  animation: hero-fade-out linear both;
+  animation-timeline: view(block);
+  animation-range: contain 0% exit 100%;
 }
 
 @keyframes rolling-text {
@@ -88,7 +79,7 @@
   0% {
     opacity: 1;
   }
-  60% {
+  30% {
     opacity: 0;
   }
   100% {
@@ -96,7 +87,7 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@screen sm {
   @keyframes hero-fade-out {
     0% {
       transform: translateY(0px);
@@ -105,8 +96,6 @@
     }
     30% {
       opacity: 1;
-      transform: translateY(-125px);
-      scale: 0.9;
     }
     50% {
       opacity: 0.5;
@@ -114,33 +103,29 @@
     100% {
       opacity: 0;
       transform: translateY(-200px);
-      scale: 0.85;
+      scale: 0.5;
     }
   }
 }
 
-@media screen and (min-width: 641px) {
+@screen md {
   @keyframes hero-fade-out {
     0% {
       transform: translateY(0px);
       opacity: 1;
       scale: 1;
     }
-    50% {
+    30% {
       opacity: 1;
-      transform: translateY(-125px);
-      scale: 0.9;
     }
     75% {
       scale: 0.9;
-    }
-    90% {
       opacity: 0;
     }
     100% {
       opacity: 0;
       transform: translateY(-200px);
-      scale: 0.85;
+      scale: 0.8;
     }
   }
 }

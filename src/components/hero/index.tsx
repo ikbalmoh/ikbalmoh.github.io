@@ -5,27 +5,21 @@ import ClientMarquee from './ClientMarquee'
 import { skills } from './constants'
 import LottieAnimation from './LottieAnimation'
 import { useRef } from 'react'
-import useScrollListener from 'utils/hooks/useScrollListener'
 
 export default function Hero() {
   const sectionRef = useRef<HTMLDivElement>(null)
-
-  useScrollListener({
-    sectionRef,
-    propertyName: '--scroll-hero'
-  })
 
   return (
     <section
       ref={sectionRef}
       id="home"
       className={classNames(
-        'min-h-screen container relative z-0 mx-auto text-gray-500 -scroll-m-14'
+        'h-screen container relative z-0 mx-auto text-gray-500'
       )}
     >
       <div
         className={classNames(
-          'container fixed top[14rem] inset-x-0 z-0 mx-auto flex flex-col items-start justify-center py-5 h-screen',
+          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center py-5 h-screen scale-100',
           styles.hero
         )}
       >

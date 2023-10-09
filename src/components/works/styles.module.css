@@ -20,18 +20,11 @@
 
 @screen md {
   .work-track {
-    animation: scroll-work-track 1s linear;
     will-change: transform, opacity;
-    -webkit-animation: scroll-work-track 1s linear;
-    -webkit-animation-play-state: paused;
-    -webkit-animation-delay: calc(var(--scroll-work) * -1s);
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-fill-mode: both;
-    animation-play-state: paused;
-    animation-delay: calc(var(--scroll-work) * -1s);
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
-    transform: translateX(0%);
+    animation: scroll-work-track linear both;
+    -webkit-animation: scroll-work-track linear both;
+    animation-timeline: view(block);
+    animation-range: contain 0% cover 100%;
   }
 
   @keyframes scroll-work-track {

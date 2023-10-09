@@ -2,16 +2,10 @@ import { classNames } from 'utils'
 import styles from './styles.module.css'
 import projects from './projects.json'
 import ProjectCard from './ProjectCard'
-import useScrollListener from 'utils/hooks/useScrollListener'
 import { useRef } from 'react'
 
 export default function Work() {
   const sectionRef = useRef<HTMLDivElement>(null)
-
-  useScrollListener({
-    sectionRef,
-    propertyName: '--scroll-work'
-  })
 
   return (
     <section

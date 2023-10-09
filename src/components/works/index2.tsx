@@ -1,4 +1,3 @@
-import useScrollListener from 'utils/hooks/useScrollListener'
 import { useRef } from 'react'
 import { classNames } from 'utils'
 import styles from './styles2.module.css'
@@ -18,11 +17,6 @@ function Portfolio() {
 
 export default function Works() {
   const ref = useRef(null)
-
-  useScrollListener({
-    propertyName: '--scroll-works',
-    sectionRef: ref
-  })
 
   return (
     <section
