@@ -19,34 +19,40 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className={classNames('container relative z-0 mx-auto text-gray-500')}
+      className={classNames(
+        'min-h-screen container relative z-0 mx-auto text-gray-500 -scroll-m-14'
+      )}
     >
       <div
         className={classNames(
-          'container fixed inset-0 z-0 mx-auto flex h-screen flex-col items-start justify-center py-5',
+          'container fixed top[14rem] inset-x-0 z-0 mx-auto flex flex-col items-start justify-center py-5 h-screen',
           styles.hero
         )}
       >
         <div className="flex w-full flex-1 flex-col-reverse items-center justify-center py-5 md:flex-row md:flex-nowrap">
           <div className="flex h-full w-full flex-col items-start justify-center md:w-1/2">
-            <div className="flex flex-wrap">
-              <h2 className="mr-2 text-xl font-medium md:text-2xl">Hi there</h2>
-              <h2
-                className={classNames(
-                  styles.wave,
-                  'text-xl font-medium md:text-2xl'
-                )}
-              >
-                👋🏻
-              </h2>
-            </div>
-            <h1 className={classNames('mt-1 text-3xl md:text-4xl font-medium')}>
+            <h2
+              className="mr-2 text-xl font-medium md:text-2xl"
+              data-aos="fade-up"
+              data-aos-duration="500"
+            >
+              Hi there 👋🏻
+            </h2>
+            <h1
+              className={classNames('mt-1 text-3xl md:text-4xl font-medium')}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               I&apos;m a{' '}
               <span className="font-semibold text-gray-800">Frontend Web</span>{' '}
               & <span className="font-semibold text-gray-800">Mobile App</span>{' '}
               Developer
             </h1>
-            <div className="mt-3 flex h-8 overflow-hidden text-xl">
+            <div
+              className="mt-3 flex h-8 overflow-hidden text-xl"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+            >
               <h3 className="mr-2 text-2xl">expert in</h3>
               <div
                 className={classNames(
@@ -64,7 +70,11 @@ export default function Hero() {
                 ))}
               </div>
             </div>
-            <div className="mt-8 flex gap-3">
+            <div
+              className="mt-8 flex gap-3"
+              data-aos="fade-up"
+              data-aos-duration="2000"
+            >
               <a
                 data-aos="fade-up"
                 data-aos-duration="1200"
@@ -87,13 +97,17 @@ export default function Hero() {
               </a>
             </div>
           </div>
-          <div className="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/2">
+          <div
+            className="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/2"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+          >
             <LottieAnimation />
           </div>
         </div>
         <ClientMarquee />
       </div>
-      <div className="h-screen"></div>
+      <div className="h-full"></div>
     </section>
   )
 }

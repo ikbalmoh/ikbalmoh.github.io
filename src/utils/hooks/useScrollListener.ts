@@ -5,23 +5,31 @@ import { useEffect } from 'react'
 interface Props {
   propertyName: string
   sectionRef: React.RefObject<HTMLDivElement>
+  allowOffset?: boolean
 }
 
 export default function useScrollListener(props: Props) {
-  const { propertyName, sectionRef } = props
+  const { propertyName, sectionRef, allowOffset } = props
 
   const [position, setPosition] = useState<number>(0)
 
   const listener = useCallback(() => {
     const sectionHeight = sectionRef.current?.clientHeight ?? 0
-    const scroll = window.scrollY
+    const scroll = window.scrollY - (sectionRef.current?.offsetTop ?? 0) + 60
 
-    const scrollPosition = scroll / sectionHeight
+    let scrollPosition = scroll / sectionHeight
+    if (!allowOffset) {
+      if (scrollPosition < 0) {
+        scrollPosition = 0
+      } else if (scrollPosition > 1) {
+        scrollPosition = 1
+      }
+    }
 
     setPosition(scrollPosition)
 
     document.body.style.setProperty(propertyName, scrollPosition.toFixed(2))
-  }, [propertyName, sectionRef])
+  }, [allowOffset, propertyName, sectionRef])
 
   useEffect(() => {
     if (sectionRef) {

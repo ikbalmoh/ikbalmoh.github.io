@@ -1,0 +1,19 @@
+.work-track::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+.work-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.work-track::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.work-track::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}

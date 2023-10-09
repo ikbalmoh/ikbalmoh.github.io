@@ -1,0 +1,175 @@
+.root {
+  @apply relative h-44 lg:h-72 overflow-hidden rounded-2xl bg-slate-200/60;
+  transition: transform 0.4s;
+}
+
+.bg-purple-green {
+  background: linear-gradient(45deg, #9862f0 0%, #3dc5be 100%);
+}
+
+.bg-yellow-navy {
+  background: linear-gradient(45deg, #bd8e57 0%, #384588 100%);
+}
+
+.root:hover {
+  @apply cursor-pointer shadow-lg;
+}
+
+.root:hover > img {
+  transform: scale(1);
+}
+
+.root > img {
+  @apply w-full rounded-t-lg object-contain;
+  transition: transform 0.5s;
+  transform: scale(0.8);
+  transform-origin: 50% 100%;
+}
+
+.title {
+  transition: opacity, transform;
+  will-change: transform, opacity;
+  -webkit-animation: title-in 1s linear;
+  -webkit-animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll-hero) * -1s);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+  animation: title-in 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll-hero) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  font-size: 3rem;
+  overflow: hidden;
+  scale: 3;
+}
+
+.work-wrapper {
+  transition: opacity, transform;
+  will-change: transform, opacity;
+  -webkit-animation: work-wrapper 1s linear;
+  -webkit-animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll-works) * -1s);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+  animation: work-wrapper 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll-works) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  transform: translateX(0%);
+}
+
+.work-heading {
+  transition: transform, opacity;
+  will-change: transform, opacity;
+  -webkit-animation: work-heading 1s linear;
+  -webkit-animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll-works) * -1s);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+  animation: work-heading 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll-works) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.work-container {
+  transition: opacity, transform;
+  will-change: opacity, transform;
+  -webkit-animation: work-container 1s linear;
+  -webkit-animation-play-state: paused;
+  -webkit-animation-delay: calc(var(--scroll-works) * -1s);
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: both;
+  animation: work-container 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll-works) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  scale: 0.7;
+}
+
+@keyframes title-in {
+  0% {
+    opacity: 0.4;
+    scale: 1.2;
+  }
+  50% {
+    opacity: 1;
+    scale: 1.2;
+  }
+  90% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes work-heading {
+  0% {
+    opacity: 1;
+    scale: 1;
+  }
+  30% {
+    scale: 0.4;
+    opacity: 0;
+  }
+  100% {
+    scale: 0.4;
+    opacity: 0;
+  }
+}
+
+@keyframes work-container {
+  0% {
+    left: 100%;
+    scale: 0.7;
+    overflow: hidden;
+  }
+  10% {
+    scale: 0.7;
+    left: 0%;
+  }
+  20% {
+    /* scale: 1; */
+    overflow: hidden;
+  }
+  35% {
+    /* overflow: auto; */
+    /* scale: 1; */
+  }
+  100% {
+    /* overflow: auto; */
+    left: 0%;
+    scale: 0.7;
+  }
+}
+
+@keyframes work-wrapper {
+  0% {
+    scale: 1;
+  }
+  35% {
+    scale: 1;
+    /* opacity: 1; */
+    background-color: black;
+    border-color: black;
+  }
+  60% {
+    background-color: transparent;
+    border-color: transparent;
+    /* opacity: 0; */
+    scale: 1.5;
+  }
+  100% {
+    /* opacity: 0; */
+    scale: 1.5;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
