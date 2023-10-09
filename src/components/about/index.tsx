@@ -1,5 +1,3 @@
-import React from 'react'
-
 const skillsets = [
   {
     label: 'Typescript'
@@ -34,14 +32,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="container mx-auto min-h-screen max-w-5xl scroll-m-16 py-10"
+      className="container mx-auto min-h-screen scroll-m-16 py-10"
     >
-      <div
-        data-aos="fade-up"
-        data-aos-duration="200"
-        className="my-6 text-center text-2xl font-semibold "
-      >
-        About Me
+      <div data-aos="fade-up" data-aos-duration="200" className="my-6">
+        <h1 className="text-center text-3xl text-gray-500 md:text-5xl">
+          <span className="text-gray-800">About</span> Me
+        </h1>
       </div>
       <div
         data-aos="fade-up"

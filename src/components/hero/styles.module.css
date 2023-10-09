@@ -37,8 +37,8 @@
 
 .hero {
   @apply opacity-100;
-  transition: opacity transform;
-  will-change: transform opacity;
+  transition: opacity, transform;
+  will-change: transform, opacity;
   -webkit-animation: hero-fade-out 1s linear;
   -webkit-animation-play-state: paused;
   -webkit-animation-delay: calc(var(--scroll-hero) * -1s);
@@ -88,7 +88,7 @@
   0% {
     opacity: 1;
   }
-  30% {
+  60% {
     opacity: 0;
   }
   100% {
@@ -134,7 +134,7 @@
     75% {
       scale: 0.9;
     }
-    85% {
+    90% {
       opacity: 0;
     }
     100% {

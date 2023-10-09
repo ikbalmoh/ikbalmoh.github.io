@@ -17,3 +17,32 @@
 .work-track::-webkit-scrollbar-thumb:hover {
   background: transparent;
 }
+
+@screen md {
+  .work-track {
+    animation: scroll-work-track 1s linear;
+    will-change: transform, opacity;
+    -webkit-animation: scroll-work-track 1s linear;
+    -webkit-animation-play-state: paused;
+    -webkit-animation-delay: calc(var(--scroll-work) * -1s);
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: both;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll-work) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    transform: translateX(0%);
+  }
+
+  @keyframes scroll-work-track {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(-60%);
+    }
+    100% {
+      transform: translateX(-60%);
+    }
+  }
+}

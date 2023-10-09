@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Project } from 'types/project'
 import { classNames } from 'utils'
 
@@ -7,13 +6,8 @@ type Props = {
 }
 
 export default function ProjectCard({ project }: Props) {
-  const [active, setActive] = useState<boolean>(false)
   return (
-    <div
-      onMouseEnter={() => setActive(true)}
-      onMouseLeave={() => setActive(false)}
-      className="h-[13rem] w-[22rem] scale-100 overflow-hidden rounded-md border border-gray-100 opacity-80 shadow-none transition-all duration-500 hover:z-50 hover:h-[22rem] hover:scale-105 hover:opacity-100 hover:shadow-xl"
-    >
+    <div className="w-full scale-100 overflow-hidden rounded-lg border border-gray-100 opacity-90 shadow-none transition-all duration-500 hover:opacity-100 hover:shadow-xl md:w-[22rem]">
       <img
         src={project.image}
         alt={project.title}
@@ -21,8 +15,7 @@ export default function ProjectCard({ project }: Props) {
       />
       <div
         className={classNames(
-          'w-full rounded-b-md bg-white transition-all duration-1000 p-4 opacity-0',
-          active ? 'block opacity-100' : 'hidden'
+          'w-full rounded-b-lg bg-white transition-all duration-1000 p-4'
         )}
       >
         <h1 className="text-lg font-medium">{project.title}</h1>
