@@ -13,8 +13,8 @@ const App = () => {
     <main className="flex min-h-screen flex-col scroll-smooth bg-white pb-32 font-exo">
       <Header />
       <Hero />
-      <Works />
       <About />
+      <Works />
     </main>
   )
 }

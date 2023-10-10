@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import styles from './styles.module.css'
-import { classNames } from 'utils'
-import { AiOutlineClose } from 'react-icons/ai'
+import MobileNav from './MobileNav'
 
 export default function Header() {
   const [active, setActive] = useState<boolean>(false)
 
   const links = [
-    { id: 'work', label: 'Work' },
-    { id: 'about', label: 'About' }
+    { id: 'about', label: 'About' },
+    { id: 'work', label: 'Work' }
   ]
 
   return (
@@ -44,30 +42,7 @@ export default function Header() {
             <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
           </button>
         </div>
-        <div
-          className={classNames(
-            styles['nav-menu'],
-            active ? styles['active'] : ''
-          )}
-        >
-          <div className="flex justify-end p-5">
-            <button className="rounded-full" onClick={() => setActive(false)}>
-              <AiOutlineClose size={30} />
-            </button>
-          </div>
-          <div className="flex w-full flex-col px-5 pb-5">
-            {links.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                className="py-3 text-lg text-gray-700"
-                onClick={() => setActive(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        </div>
+        <MobileNav visible={active} onDismiss={() => setActive(false)} />
       </div>
     </nav>
   )

@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { classNames } from 'utils'
-import styles from './styles2.module.css'
+import styles from './styles.module.css'
 
 function Portfolio() {
   return (
@@ -21,7 +21,7 @@ export default function Works() {
   return (
     <section
       id="works"
-      className="container relative z-[1] mx-auto h-[200vh] scroll-m-20 py-6"
+      className="container relative z-[1] mx-auto h-[200vh] scroll-m-20"
       ref={ref}
     >
       <div

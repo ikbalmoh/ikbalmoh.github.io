@@ -5,6 +5,7 @@ import { classNames } from 'utils'
 const clients: Array<string> = [
   'telkom',
   'bmkg',
+  'garutkab',
   'pijar',
   'dgti',
   'ezy',

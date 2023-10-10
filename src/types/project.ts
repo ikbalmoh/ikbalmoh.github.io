@@ -6,4 +6,5 @@ export type Project = {
   link?: string
   tags: string[]
   bg?: string
+  client?: string
 }

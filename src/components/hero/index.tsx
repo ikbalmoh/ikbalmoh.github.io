@@ -14,12 +14,12 @@ export default function Hero() {
       ref={sectionRef}
       id="home"
       className={classNames(
-        'h-screen container relative z-0 mx-auto text-gray-500'
+        'h-[95vh] container relative z-0 mx-auto text-gray-500'
       )}
     >
       <div
         className={classNames(
-          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center py-5 h-screen scale-100',
+          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[95vh] scale-100 pb-5',
           styles.hero
         )}
       >
@@ -101,7 +101,7 @@ export default function Hero() {
         </div>
         <ClientMarquee />
       </div>
-      <div className="h-full"></div>
+      <div className="h-[95vh]"></div>
     </section>
   )
 }

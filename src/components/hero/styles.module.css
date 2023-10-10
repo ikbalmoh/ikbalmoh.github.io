@@ -34,8 +34,8 @@
   transform: translateY(0px);
   opacity: 1;
   scale: 1;
-  transition: opacity, transform;
-  will-change: transform, opacity;
+  transition: opacity;
+  will-change: opacity;
   -webkit-animation: hero-fade-out linear both;
   animation: hero-fade-out linear both;
   animation-timeline: view(block);
@@ -79,7 +79,10 @@
   0% {
     opacity: 1;
   }
-  30% {
+  10% {
+    opacity: 1;
+  }
+  40% {
     opacity: 0;
   }
   100% {
@@ -89,20 +92,15 @@
 
 @keyframes hero-fade-out {
   0% {
-    transform: translateY(0px);
     opacity: 1;
     scale: 1;
   }
-  30% {
-    opacity: 1;
-  }
-  75% {
-    scale: 0.9;
+  70% {
+    scale: 0.8;
     opacity: 0;
   }
   100% {
     opacity: 0;
-    transform: translateY(-200px);
     scale: 0.8;
   }
 }

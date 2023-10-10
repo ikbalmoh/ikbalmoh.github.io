@@ -4,31 +4,33 @@
     "year": 2022,
     "description": "A brand new BMKG's maritim website, displaying a weather forecasts",
     "image": "/images/projects/bmkg.png",
-    "tags": ["next.js", "react.js", "tailwind", "leaflet"],
-    "link": "https://maritim-bmkg.vercel.app/",
-    "bg": "bg-green"
+    "tags": ["next.js", "tailwind", "leaflet"],
+    "link": "https://maritim-bmkg.vercel.app",
+    "client": "bmkg"
   },
   {
-    "title": "Pertamina Merchant Dashboard",
+    "title": "MAP Admin Dashboard",
     "year": 2022,
-    "description": "Dashboard for pertamina merchants",
+    "description": "Admin dashboard to manage pertamina's merchants",
     "image": "/images/projects/pertamina-merchant.png",
-    "tags": ["react.js"]
+    "tags": ["react.js", "redux", "chart.js"],
+    "client": "telkom"
+  },
+  {
+    "title": "Pijar Dashboard",
+    "year": 2022,
+    "description": "Pijar dashboard to manage the school members",
+    "image": "/images/projects/pijar.png",
+    "tags": ["react.js", "redux"],
+    "client": "pijar"
   },
   {
     "title": "Sapakat",
     "year": 2022,
     "description": "Well being communinity map",
     "image": "/images/projects/sapakat.png",
-    "tags": ["next.js", "react.js", "tailwind", "leaflet"],
-    "link": "https://dms-sapakat.kabgarut.com"
-  },
-  {
-    "title": "Github Search",
-    "year": 2023,
-    "description": "App for search github search & repositories",
-    "image": "/images/projects/github-search.png",
-    "tags": ["exploration", "next.js", "react.js", "tailwind"],
-    "link": "https://iikmoh.github.io/github-search"
+    "tags": ["next.js", "tailwind", "leaflet"],
+    "link": "https://dms-sapakat.kabgarut.com",
+    "client": "garutkab"
   }
 ]
