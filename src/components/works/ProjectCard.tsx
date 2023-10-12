@@ -12,40 +12,55 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div
       ref={ref}
-      className="w-full scale-100 overflow-hidden rounded-lg border border-gray-100 opacity-90 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:border-gray-800 hover:opacity-100 hover:shadow-xl md:w-auto"
+      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 opacity-90 shadow-none transition-all delay-700 duration-500 will-change-transform hover:scale-105 hover:opacity-100 hover:shadow-xl md:w-auto"
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="h-[13rem] w-full object-cover object-left-top md:h-[15rem]"
-      />
       <div
-        className={classNames(
-          'w-full rounded-b-lg bg-white transition-all duration-1000 p-4'
-        )}
+        style={{
+          background: `linear-gradient(to right, ${project.gradient.join(
+            ', '
+          )})`
+        }}
+        className={
+          'flex h-[13rem] w-full items-end overflow-hidden px-2 pt-5 lg:px-3 xl:h-[12rem]'
+        }
       >
-        <h1 className="text-lg font-medium">{project.title}</h1>
-        <div className="w-full max-w-xs text-gray-600">
-          <p>{project.description}</p>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-full w-full origin-bottom scale-90 rounded-t-lg object-cover object-left-top opacity-90 transition-[transform,opacity] duration-1000 group-hover:scale-110 group-hover:opacity-100"
+        />
+      </div>
+      <div className={classNames('w-full bg-white relative h-24')}>
+        <div className="h-10 px-3 pt-3">
+          <h1 className="text-lg font-medium">{project.title}</h1>
         </div>
-        <div className="mt-5 flex items-center justify-between">
-          <div className="flex flex-1 items-center gap-2">
-            {project.tags.map((tag) => (
-              <span
-                className="rounded-md bg-gray-200 px-3 py-1 text-xs"
-                key={tag}
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="h-14 overflow-hidden">
+          <div className="z-0 flex translate-y-0 flex-col delay-500 duration-500 will-change-transform group-hover:-translate-y-14">
+            <div className="flex h-14 flex-col justify-between px-3">
+              <div className="mt-3 flex items-start justify-between">
+                <div className="mr-3 flex flex-1 flex-wrap items-center gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      className="rounded-md bg-gray-100 px-3 py-1 text-xs text-gray-700"
+                      key={tag}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {project.client ? (
+                  <img
+                    src={`/images/clients/${project.client}.png`}
+                    alt={project.client}
+                    className="h-8 w-auto object-contain"
+                  />
+                ) : null}
+              </div>
+            </div>
+            <div className="p-3 text-sm text-gray-600">
+              {project.description}
+            </div>
           </div>
-          {project.client ? (
-            <img
-              src={`/images/clients/${project.client}.png`}
-              alt={project.client}
-              className="h-8 w-auto object-contain"
-            />
-          ) : null}
         </div>
       </div>
     </div>

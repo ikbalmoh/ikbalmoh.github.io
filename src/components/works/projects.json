@@ -6,7 +6,9 @@
     "image": "/images/projects/bmkg.png",
     "tags": ["next.js", "tailwind", "leaflet"],
     "link": "https://maritim-bmkg.vercel.app",
-    "client": "bmkg"
+    "client": "bmkg",
+    "gradient": ["rgb(255 185 27)", "rgb(124 164 255)"],
+    "type": "web"
   },
   {
     "title": "MAP Admin Dashboard",
@@ -14,15 +16,19 @@
     "description": "Admin dashboard to manage pertamina's merchants",
     "image": "/images/projects/pertamina-merchant.png",
     "tags": ["react.js", "redux", "chart.js"],
-    "client": "telkom"
+    "client": "telkom",
+    "gradient": ["#ED213A", "#93291E"],
+    "type": "web"
   },
   {
-    "title": "Pijar Dashboard",
+    "title": "Pijar Belajar",
     "year": 2022,
-    "description": "Pijar dashboard to manage the school members",
+    "description": "Dashboard Pijar to manage the school members",
     "image": "/images/projects/pijar.png",
     "tags": ["react.js", "redux"],
-    "client": "pijar"
+    "client": "pijar",
+    "gradient": ["#12c2e9", "#c471ed", "#f64f59"],
+    "type": "web"
   },
   {
     "title": "Sapakat",
@@ -31,6 +37,8 @@
     "image": "/images/projects/sapakat.png",
     "tags": ["next.js", "tailwind", "leaflet"],
     "link": "https://dms-sapakat.kabgarut.com",
-    "client": "garutkab"
+    "client": "garutkab",
+    "gradient": ["#ff4b1f", "#ff9068"],
+    "type": "web"
   }
 ]
