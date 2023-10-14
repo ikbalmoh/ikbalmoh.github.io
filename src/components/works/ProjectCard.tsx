@@ -12,7 +12,7 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div
       ref={ref}
-      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 opacity-90 shadow-none transition-all delay-700 duration-500 will-change-transform hover:scale-105 hover:opacity-100 hover:shadow-xl md:w-auto"
+      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:shadow-xl md:w-auto"
     >
       <div
         style={{
@@ -20,15 +20,15 @@ export default function ProjectCard({ project }: Props) {
             ', '
           )})`
         }}
-        className={
-          'flex h-[13rem] w-full items-end overflow-hidden px-2 pt-5 lg:px-3 xl:h-[12rem]'
-        }
+        className={'flex h-[12rem] w-full items-end overflow-hidden'}
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="h-full w-full origin-bottom scale-90 rounded-t-lg object-cover object-left-top opacity-90 transition-[transform,opacity] duration-1000 group-hover:scale-110 group-hover:opacity-100"
-        />
+        <div className="h-full w-full origin-bottom translate-y-0 scale-75 opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in group-hover:translate-y-[calc(12rem-100%)] group-hover:delay-1000"
+          />
+        </div>
       </div>
       <div className={classNames('w-full bg-white relative h-24')}>
         <div className="h-10 px-3 pt-3">
