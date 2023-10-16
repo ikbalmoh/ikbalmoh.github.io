@@ -32,7 +32,15 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <div className="w-min md:w-[200px]">
+        <div className="flex w-min justify-end md:w-[200px]">
+          <a
+            href="https://www.cakeresume.com/ikbalmoh"
+            target="_blank"
+            className="hidden text-sm text-blue-700 transition-colors duration-500 hover:font-medium hover:text-blue-900 md:block"
+            rel="external noreferrer"
+          >
+            View Resume
+          </a>
           <button
             className="flex flex-col items-center justify-center md:hidden"
             onClick={() => setActive(true)}

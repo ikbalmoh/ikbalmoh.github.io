@@ -27,7 +27,7 @@ export default function MobileNav({ visible, onDismiss }: Props) {
           <AiOutlineClose size={30} />
         </button>
       </div>
-      <div className="flex w-full flex-col px-5 pb-5">
+      <div className="flex h-full w-full flex-col items-start px-5 pb-5">
         {links.map((link) => (
           <a
             key={link.id}
@@ -38,6 +38,15 @@ export default function MobileNav({ visible, onDismiss }: Props) {
             {link.label}
           </a>
         ))}
+        <div className="my-5 flex-1"></div>
+        <a
+          href="https://www.cakeresume.com/ikbalmoh"
+          target="_blank"
+          className=" rounded-lg border border-blue-700 px-5 py-3 text-blue-700 transition-colors duration-500 hover:font-medium hover:text-blue-900"
+          rel="external noreferrer"
+        >
+          View Resume
+        </a>
       </div>
     </div>
   )
