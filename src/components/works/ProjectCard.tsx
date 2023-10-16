@@ -20,9 +20,11 @@ export default function ProjectCard({ project }: Props) {
             ', '
           )})`
         }}
-        className={'flex h-[12rem] w-full items-end overflow-hidden'}
+        className={
+          'flex h-[10rem] w-full items-end overflow-hidden md:h-[12rem]'
+        }
       >
-        <div className="h-full w-full origin-bottom translate-y-0 scale-75 opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
+        <div className="h-full w-full origin-bottom translate-y-0 scale-75  opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
           <img
             src={project.image}
             alt={project.title}
