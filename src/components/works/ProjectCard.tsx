@@ -24,11 +24,11 @@ export default function ProjectCard({ project }: Props) {
           'flex h-[10rem] w-full items-end overflow-hidden md:h-[12rem]'
         }
       >
-        <div className="h-full w-full origin-bottom translate-y-0 scale-75  opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
+        <div className="h-full w-full origin-bottom scale-75  opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
           <img
             src={project.image}
             alt={project.title}
-            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in group-hover:translate-y-[calc(12rem-100%)] group-hover:delay-1000"
+            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 md:group-hover:translate-y-[calc(12rem-100%)]"
           />
         </div>
       </div>

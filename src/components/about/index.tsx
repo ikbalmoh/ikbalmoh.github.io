@@ -15,7 +15,7 @@ export default function About() {
       id="about"
       className={classNames(
         styles.root,
-        'container relative z-[1] mx-auto min-h-[300vh]'
+        'container relative z-[1] mx-auto min-h-[200vh] md:min-h-[300vh]'
       )}
       ref={ref}
     >
@@ -27,12 +27,12 @@ export default function About() {
       >
         <div
           className={classNames(
-            'fixed inset-0 rounded-3xl border-[0.75rem] border-black bg-gradient-to-br from-black to-blue-900 bg-fixed',
+            'fixed inset-0 rounded-3xl border-[0.75rem] border-black bg-gradient-to-br from-black to-blue-900 bg-fixed hidden md:block',
             styles['about-bg']
           )}
         ></div>
         <div className="h-full w-full items-center justify-center overflow-hidden rounded-2xl">
-          <div className="relative h-full p-14">
+          <div className="relative h-full p-0 md:p-14">
             <div
               className={classNames(
                 styles['about-heading'],
@@ -41,16 +41,17 @@ export default function About() {
             >
               <h2
                 className={classNames(
-                  'font-medium text-center text-white/60 text-4xl md:text-6xl px-6 md:max-w-xl mx-auto'
+                  'font-medium text-center text-gray-500 md:text-white/60 text-4xl md:text-6xl p-0 md:px-6 md:max-w-xl mx-auto'
                 )}
               >
-                <span className="text-white">Nice</span> to Meet You
+                <span className="text-gray-800 md:text-white">Nice</span> to
+                Meet You
               </h2>
             </div>
             <div
               className={classNames(
                 styles['about-container'],
-                'absolute inset-0 h-full w-full bg-white rounded-xl overflow-hidden p-10 flex flex-col justify-center'
+                'absolute inset-0 h-full w-full bg-white rounded-xl overflow-hidden p-5 md:p-10 flex flex-col justify-center shadow-xl md:shadow-none'
               )}
             >
               <div className="text-2xl text-gray-800">Hi, I&apos;m Ikbal</div>

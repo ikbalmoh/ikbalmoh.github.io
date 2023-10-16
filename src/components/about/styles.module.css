@@ -53,17 +53,28 @@
 }
 
 @keyframes about-wrapper {
-  0% {
+  from {
     transform: scale(1);
   }
-  60% {
+  to {
     transform: scale(1);
   }
-  70% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1.2);
+}
+
+@screen md {
+  @keyframes about-wrapper {
+    0% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1.2);
+    }
   }
 }
 
