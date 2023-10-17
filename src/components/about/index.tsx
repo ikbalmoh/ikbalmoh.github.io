@@ -41,8 +41,10 @@ export default function About() {
               >
                 <span className="text-gray-800 md:text-white">Hello,</span>
                 <br />
-                Nite to{' '}
-                <span className="text-gray-800 md:text-white">Meet</span> You
+                Nice to <span className="text-gray-800 md:text-white">
+                  See
+                </span>{' '}
+                You
               </h2>
             </div>
             <div
@@ -54,7 +56,7 @@ export default function About() {
               <div className="text-2xl font-medium text-gray-800">
                 I am Ikbal
               </div>
-              <div className="mt-5 flex flex-col items-center justify-center text-xl text-gray-600">
+              <div className="mt-5 flex flex-col justify-center text-xl text-gray-600">
                 <p className="mt-2">
                   I&apos;m a passionate Frontend Web and Mobile App Developer
                   with 5+ years of experience building scalable web and mobile
@@ -65,6 +67,16 @@ export default function About() {
                   Native, Flutter, and Laravel, I Continuously staying updated
                   with the latest industry trends, I strive to deliver
                   high-quality code and exceptional user experiences.
+                </p>
+                <p className="mt-5">
+                  Want to talk with me? <br />
+                  please send me email at{' '}
+                  <a
+                    href="mailto:ikbalmoh.dev@gmail.com"
+                    className="text-blue-600"
+                  >
+                    ikbalmoh.dev@gmail.com
+                  </a>
                 </p>
               </div>
             </div>

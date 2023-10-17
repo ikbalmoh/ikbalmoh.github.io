@@ -8,4 +8,5 @@ export type Project = {
   bg?: string
   client?: string
   gradient: string[]
+  type: string
 }

@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Project } from 'types/project'
 import { classNames } from 'utils'
+import { SlArrowRight } from 'react-icons/sl'
 
 type Props = {
   project: Project
@@ -59,8 +60,20 @@ export default function ProjectCard({ project }: Props) {
                 ) : null}
               </div>
             </div>
-            <div className="p-3 text-sm text-gray-600">
-              {project.description}
+            <div className="flex items-start p-3">
+              <div className="mr-2 flex-1 text-sm text-gray-600">
+                {project.description}
+              </div>
+              {project.link ? (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center rounded bg-blue-600 px-2 py-1 text-xs font-medium text-white transition-colors duration-500 hover:bg-blue-500 hover:shadow-md"
+                >
+                  Preview <SlArrowRight className="ml-1" />
+                </a>
+              ) : null}
             </div>
           </div>
         </div>

@@ -11,6 +11,17 @@
     "type": "web"
   },
   {
+    "title": "Selleri - Mobile POS",
+    "year": 2022,
+    "description": "Offline First Mobile Point of Sales",
+    "image": "/images/projects/selleri.png",
+    "tags": ["react native", "firebase", "realm.js"],
+    "link": "https://play.google.com/store/apps/details?id=com.dgti.selleri&hl=en-ID",
+    "client": "dgti",
+    "gradient": ["rgb(103, 202, 118)", "rgb(87, 159, 222)"],
+    "type": "mobile"
+  },
+  {
     "title": "MAP Admin Dashboard",
     "year": 2022,
     "description": "Admin dashboard to manage pertamina's merchants",
@@ -48,7 +59,7 @@
     "image": "/images/projects/simkp.png",
     "tags": ["vue.js", "laravel"],
     "client": "dishub",
-    "gradient": ["rgb(75 183 155)", "rgb(71 163 235)"],
+    "gradient": ["rgb(71 163 235)", "rgb(31 45 62)"],
     "type": "web"
   }
 ]

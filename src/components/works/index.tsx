@@ -6,14 +6,17 @@ import { AiOutlineFileSearch } from 'react-icons/ai'
 
 export default function Work() {
   const filters: { [key: string]: string } = {
+    all: '💻 📱',
     web: '💻 Web',
     mobile: '📱 Mobile'
   }
 
-  const [activeFilter, setActiveFilter] = useState<string>('web')
+  const [activeFilter, setActiveFilter] = useState<string>('all')
 
   const filteredProjects = () => {
-    return projects.filter((project) => project.type === activeFilter)
+    return activeFilter === 'all'
+      ? projects
+      : projects.filter((project) => project.type === activeFilter)
   }
 
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -34,7 +37,7 @@ export default function Work() {
           </h1>
         </div>
         <div
-          className="my-5 hidden items-center justify-center gap-6 md:my-10"
+          className="my-5 flex items-center justify-center gap-6 md:my-10"
           data-aos="fade-up"
         >
           {Object.keys(filters).map((key) => (
