@@ -2,11 +2,6 @@ import { useRef } from 'react'
 import { classNames } from 'utils'
 import styles from './styles.module.css'
 
-const aboutText = [
-  "I'm a passionate Frontend Web and Mobile App Developer with 5+ years of experience building scalable web and mobile applications. ",
-  'Proficient in various frameworks such as Next.js, React Native, Flutter, and Laravel, I Continuously staying updated with the latest industry trends, I strive to deliver high-quality code and exceptional user experiences.'
-]
-
 export default function About() {
   const ref = useRef(null)
 
@@ -22,7 +17,7 @@ export default function About() {
       <div
         className={classNames(
           styles['about-wrapper'],
-          'sticky top-[15vh] min-h-[70vh] h-[70vh] overflow-hidden rounded-2xl p-3'
+          'sticky top-[15vh] min-h-[70vh] h-[90vh] md:h-[70vh] overflow-hidden rounded-2xl p-3'
         )}
       >
         <div
@@ -44,23 +39,33 @@ export default function About() {
                   'font-medium text-center text-gray-500 md:text-white/60 text-4xl md:text-6xl p-0 md:px-6 md:max-w-xl mx-auto'
                 )}
               >
-                <span className="text-gray-800 md:text-white">Nice</span> to
-                Meet You
+                <span className="text-gray-800 md:text-white">Hello,</span>
+                <br />
+                Nite to{' '}
+                <span className="text-gray-800 md:text-white">Meet</span> You
               </h2>
             </div>
             <div
               className={classNames(
                 styles['about-container'],
-                'absolute inset-0 h-full w-full bg-white rounded-xl overflow-hidden p-5 md:p-10 flex flex-col justify-center shadow-xl md:shadow-none'
+                'absolute inset-0 h-min md:h-full w-full bg-white rounded-xl md:overflow-hidden p-5 md:p-10 flex flex-col justify-center shadow-xl md:shadow-none'
               )}
             >
-              <div className="text-2xl text-gray-800">Hi, I&apos;m Ikbal</div>
+              <div className="text-2xl font-medium text-gray-800">
+                I am Ikbal
+              </div>
               <div className="mt-5 flex flex-col items-center justify-center text-xl text-gray-600">
-                {aboutText.map((text, i) => (
-                  <p className="mt-2" key={i}>
-                    {text}
-                  </p>
-                ))}
+                <p className="mt-2">
+                  I&apos;m a passionate Frontend Web and Mobile App Developer
+                  with 5+ years of experience building scalable web and mobile
+                  applications.
+                </p>
+                <p>
+                  Proficient in various frameworks such as Next.js, React
+                  Native, Flutter, and Laravel, I Continuously staying updated
+                  with the latest industry trends, I strive to deliver
+                  high-quality code and exceptional user experiences.
+                </p>
               </div>
             </div>
           </div>

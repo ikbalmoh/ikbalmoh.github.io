@@ -21,9 +21,9 @@
     "type": "web"
   },
   {
-    "title": "Pijar Belajar",
+    "title": "Pijar Belajar Dashboard",
     "year": 2022,
-    "description": "Dashboard Pijar to manage the school members",
+    "description": "Dashboard for managing Pijar member schools",
     "image": "/images/projects/pijar.png",
     "tags": ["react.js", "redux"],
     "client": "pijar",
@@ -33,12 +33,22 @@
   {
     "title": "Sapakat",
     "year": 2022,
-    "description": "Well being communinity map",
+    "description": "Map to illustrate the distribution of community welfare",
     "image": "/images/projects/sapakat.jpeg",
     "tags": ["next.js", "tailwind", "leaflet"],
     "link": "https://dms-sapakat.kabgarut.com",
     "client": "garutkab",
     "gradient": ["#ff4b1f", "#ff9068"],
+    "type": "web"
+  },
+  {
+    "title": "SIMKP DISHUB Garut",
+    "year": 2021,
+    "description": "A public transport permit management system in the city of Garut",
+    "image": "/images/projects/simkp.png",
+    "tags": ["vue.js", "laravel"],
+    "client": "dishub",
+    "gradient": ["rgb(75 183 155)", "rgb(71 163 235)"],
     "type": "web"
   }
 ]

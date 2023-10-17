@@ -34,7 +34,7 @@ export default function Work() {
           </h1>
         </div>
         <div
-          className="my-5 flex items-center justify-center gap-6 md:my-10"
+          className="my-5 hidden items-center justify-center gap-6 md:my-10"
           data-aos="fade-up"
         >
           {Object.keys(filters).map((key) => (
@@ -52,7 +52,9 @@ export default function Work() {
         </div>
         {filteredProjects().length > 0 ? (
           <div
-            className={classNames('grid grid-cols-12 gap-6 xl:gap-8 w-full')}
+            className={classNames(
+              'grid grid-cols-12 gap-6 xl:gap-8 w-full mt-10'
+            )}
           >
             {filteredProjects().map((project, i) => (
               <div

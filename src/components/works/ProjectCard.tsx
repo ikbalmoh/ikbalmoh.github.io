@@ -28,7 +28,7 @@ export default function ProjectCard({ project }: Props) {
           <img
             src={project.image}
             alt={project.title}
-            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s] md:group-hover:translate-y-[calc(12rem-100%)]"
+            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s] md:group-hover:translate-y-[calc(12rem-100%)]"
           />
         </div>
       </div>

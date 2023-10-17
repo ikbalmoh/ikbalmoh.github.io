@@ -69,11 +69,8 @@
     60% {
       transform: scale(1);
     }
-    70% {
-      transform: scale(1.2);
-    }
     100% {
-      transform: scale(1.2);
+      transform: scale(1.05);
     }
   }
 }
@@ -111,10 +108,12 @@
   50% {
     opacity: 1;
     transform: scale(1);
+    @apply shadow-none;
   }
   100% {
     left: 0%;
     transform: scale(1);
     overflow: auto;
+    @apply shadow-none;
   }
 }
