@@ -29,12 +29,19 @@
 }
 
 .about-container {
-  transition: transform, opacity;
-  will-change: transform, opacity;
-  -webkit-animation: about-container 1s linear;
-  animation: about-container 1s linear;
-  animation-timeline: --section-about-tl;
-  transform: scale(0.7);
+  @apply relative w-full rounded-xl flex flex-col justify-center shadow-xl;
+}
+
+@screen md {
+  .about-container {
+    @apply absolute inset-0 h-full w-full bg-white rounded-xl overflow-hidden p-10 flex flex-col justify-center shadow-none;
+    transition: transform, opacity;
+    will-change: transform, opacity;
+    -webkit-animation: about-container 1s linear;
+    animation: about-container 1s linear;
+    animation-timeline: --section-about-tl;
+    transform: scale(0.7);
+  }
 }
 
 @keyframes about-bg {

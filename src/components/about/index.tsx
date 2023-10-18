@@ -10,14 +10,14 @@ export default function About() {
       id="about"
       className={classNames(
         styles.root,
-        'container relative z-[1] mx-auto min-h-[200vh] md:min-h-[300vh]'
+        'container relative z-[1] mx-auto md:min-h-[300vh]'
       )}
       ref={ref}
     >
       <div
         className={classNames(
           styles['about-wrapper'],
-          'sticky top-[15vh] min-h-[70vh] h-[90vh] md:h-[70vh] overflow-hidden rounded-2xl p-3'
+          'md:sticky md:top-[15vh] min-h-[70vh] md:h-[70vh] overflow-hidden rounded-2xl p-3'
         )}
       >
         <div
@@ -31,7 +31,7 @@ export default function About() {
             <div
               className={classNames(
                 styles['about-heading'],
-                'absolute inset-0 flex h-full w-full shrink-0 grow-0 items-center p-3 rounded-xl'
+                'absolute inset-0 hidden md:flex h-full w-full shrink-0 grow-0 items-center p-3 rounded-xl'
               )}
             >
               <h2
@@ -47,24 +47,26 @@ export default function About() {
                 You
               </h2>
             </div>
-            <div
-              className={classNames(
-                styles['about-container'],
-                'absolute inset-0 h-min md:h-full w-full bg-white rounded-xl md:overflow-hidden p-5 md:p-10 flex flex-col justify-center shadow-xl md:shadow-none'
-              )}
-            >
-              <h1 className="text-center text-3xl  text-gray-800 xl:text-5xl">
+            <div className={styles['about-container']}>
+              <h1
+                className="text-center text-3xl  text-gray-800 xl:text-5xl"
+                data-aos="fade-up"
+              >
                 About <span className="text-gray-500">Me</span>
               </h1>
               <div className="mt-8 flex flex-col items-center md:mt-10 md:flex-row md:items-start">
                 <div className="mb-5 mr-0 mt-2 md:mb-0 md:mr-8">
                   <img
+                    data-aos="fade-up"
                     src="/images/avatar.JPG"
                     alt="ikbalmoh"
                     className="my-3 w-[120px] rounded-lg object-contain object-right-top shadow-lg md:my-0"
                   />
                 </div>
-                <div className="flex flex-1 flex-col justify-center text-xl text-gray-600">
+                <div
+                  data-aos="fade-up"
+                  className="flex flex-1 flex-col justify-center text-xl text-gray-600"
+                >
                   <p>
                     I&apos;m a passionate{' '}
                     <span className="font-medium">Frontend Web</span> and{' '}
