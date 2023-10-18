@@ -37,7 +37,7 @@ export default function Work() {
           </h1>
         </div>
         <div
-          className="my-5 flex items-center justify-center gap-6 md:my-10"
+          className="my-5 flex items-center justify-center gap-6 md:mt-10"
           data-aos="fade-up"
         >
           {Object.keys(filters).map((key) => (

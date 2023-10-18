@@ -15,7 +15,7 @@
     "year": 2022,
     "description": "Offline First Mobile Point of Sales",
     "image": "/images/projects/selleri.png",
-    "tags": ["react native", "firebase", "realm.js"],
+    "tags": ["react native", "firebase"],
     "link": "https://play.google.com/store/apps/details?id=com.dgti.selleri&hl=en-ID",
     "client": "dgti",
     "gradient": ["rgb(103, 202, 118)", "rgb(87, 159, 222)"],
