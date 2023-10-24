@@ -41,10 +41,10 @@ export default function ProjectCard({ project }: Props) {
           <div className="z-0 flex translate-y-0 flex-col delay-500 duration-500 will-change-transform group-hover:-translate-y-14">
             <div className="flex h-14 flex-col justify-between px-3">
               <div className="mt-3 flex items-start justify-between">
-                <div className="mr-3 flex flex-1 flex-wrap items-center gap-2">
+                <div className="mr-1 flex flex-1 flex-wrap items-center gap-1 lg:gap-2">
                   {project.tags.map((tag) => (
                     <span
-                      className="rounded-md bg-gray-100 px-3 py-1 text-xs text-gray-700"
+                      className="rounded-md bg-gray-100 px-1 py-0.5 text-xs text-gray-700 lg:px-3 lg:py-1"
                       key={tag}
                     >
                       {tag}
@@ -55,7 +55,7 @@ export default function ProjectCard({ project }: Props) {
                   <img
                     src={`/images/clients/${project.client}.png`}
                     alt={project.client}
-                    className="h-8 w-auto object-contain"
+                    className="h-6 w-auto object-contain md:h-8"
                   />
                 ) : null}
               </div>
