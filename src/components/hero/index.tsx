@@ -4,23 +4,50 @@ import { classNames } from 'utils'
 import ClientMarquee from './ClientMarquee'
 import { skills } from './constants'
 import LottieAnimation from './LottieAnimation'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLDivElement>(null)
+  const heroRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    heroRef.current?.animate(
+      [
+        {
+          opacity: 1,
+          transform: 'scale(1)'
+        },
+        {
+          opacity: 0,
+          transform: 'scale(.8)',
+          offset: 0.7
+        },
+        {
+          opacity: 0,
+          transform: 'scale(.8)'
+        }
+      ],
+      {
+        fill: 'both',
+        timeline: new ViewTimeline({
+          subject: heroRef.current
+        }),
+        rangeStart: 'contain 0%',
+        rangeEnd: 'exit 100%'
+      }
+    )
+  }, [])
 
   return (
     <section
-      ref={sectionRef}
       id="home"
       className={classNames(
         'h-[95vh] container relative z-0 mx-auto text-gray-500'
       )}
     >
       <div
+        ref={heroRef}
         className={classNames(
-          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[95vh] scale-100 pb-5',
-          styles.hero
+          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[95vh] scale-100 pb-5'
         )}
       >
         <div className="flex w-full flex-1 flex-col-reverse items-center justify-center py-5 md:flex-row md:flex-nowrap">
@@ -99,7 +126,7 @@ export default function Hero() {
             <LottieAnimation />
           </div>
         </div>
-        <ClientMarquee />
+        <ClientMarquee heroRef={heroRef} />
       </div>
       <div className="h-[95vh]"></div>
     </section>

@@ -41,6 +41,9 @@
     animation: about-container 1s linear;
     animation-timeline: --section-about-tl;
     transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    left: 100%;
+    opacity: 0.5;
   }
 }
 
@@ -62,9 +65,11 @@
 @keyframes about-wrapper {
   from {
     transform: scale(1);
+    -webkit-transform: scale(1);
   }
   to {
     transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 
@@ -72,12 +77,15 @@
   @keyframes about-wrapper {
     0% {
       transform: scale(1);
+      -webkit-transform: scale(1);
     }
     60% {
       transform: scale(1);
+      -webkit-transform: scale(1);
     }
     100% {
       transform: scale(1.05);
+      -webkit-transform: scale(1.05);
     }
   }
 }
@@ -88,20 +96,25 @@
   }
   20% {
     transform: scale(1);
+    -webkit-transform: scale(1);
     opacity: 1;
   }
   40% {
     transform: scale(0.4);
+    -webkit-transform: scale(0.4);
     opacity: 0;
   }
   100% {
     transform: scale(0.4);
+    -webkit-transform: scale(0.4);
     opacity: 0;
   }
 }
 
 @keyframes about-container {
   0% {
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
     opacity: 0.5;
     left: 100%;
   }
@@ -111,15 +124,18 @@
   30% {
     left: 0%;
     transform: scale(0.7);
+    -webkit-transform: scale(0.7);
   }
   50% {
     opacity: 1;
     transform: scale(1);
+    -webkit-transform: scale(1);
     @apply shadow-none;
   }
   100% {
     left: 0%;
     transform: scale(1);
+    -webkit-transform: scale(1);
     overflow: auto;
     @apply shadow-none;
   }
