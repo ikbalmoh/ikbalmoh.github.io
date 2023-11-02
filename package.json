@@ -22,6 +22,7 @@
     "@floating-ui/react": "^0.25.0",
     "@headlessui/react": "^1.7.16",
     "aos": "^2.3.4",
+    "framer-motion": "^10.16.4",
     "lottie-react": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

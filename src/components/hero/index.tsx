@@ -1,41 +1,25 @@
+import { useRef } from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import styles from './styles.module.css'
 import { classNames } from 'utils'
 import ClientMarquee from './ClientMarquee'
 import { skills } from './constants'
 import LottieAnimation from './LottieAnimation'
-import { useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    heroRef.current?.animate(
-      [
-        {
-          opacity: 1,
-          transform: 'scale(1)'
-        },
-        {
-          opacity: 0,
-          transform: 'scale(.8)',
-          offset: 0.7
-        },
-        {
-          opacity: 0,
-          transform: 'scale(.8)'
-        }
-      ],
-      {
-        fill: 'both',
-        timeline: new ViewTimeline({
-          subject: heroRef.current
-        }),
-        rangeStart: 'contain 0%',
-        rangeEnd: 'exit 100%'
-      }
-    )
-  }, [])
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['0%', '70%']
+  })
+
+  const opacity = useTransform(scrollYProgress, (progress) => 1 - progress)
+  const scale = useTransform(
+    scrollYProgress,
+    (progress) => 1 + ((0.9 - 1) * (progress * 100)) / 100
+  )
 
   return (
     <section
@@ -43,9 +27,10 @@ export default function Hero() {
       className={classNames(
         'h-[95vh] container relative z-0 mx-auto text-gray-500'
       )}
+      ref={heroRef}
     >
-      <div
-        ref={heroRef}
+      <motion.div
+        style={{ opacity, scale }}
         className={classNames(
           'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[95vh] scale-100 pb-5'
         )}
@@ -126,8 +111,8 @@ export default function Hero() {
             <LottieAnimation />
           </div>
         </div>
-        <ClientMarquee heroRef={heroRef} />
-      </div>
+        <ClientMarquee />
+      </motion.div>
       <div className="h-[95vh]"></div>
     </section>
   )

@@ -6,7 +6,6 @@ import Works from './works'
 import AOS from 'aos'
 
 import 'aos/dist/aos.css'
-import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js'
 
 AOS.init()
 

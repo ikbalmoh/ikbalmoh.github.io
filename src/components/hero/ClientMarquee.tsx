@@ -1,4 +1,4 @@
-import { ForwardedRef, forwardRef, useEffect, useRef } from 'react'
+import { useRef } from 'react'
 import styles from './styles.module.css'
 
 const clients: Array<string> = [
@@ -27,41 +27,8 @@ function Clients() {
   )
 }
 
-const ClientMarquee = ({
-  heroRef
-}: {
-  heroRef: React.RefObject<HTMLDivElement>
-}) => {
+const ClientMarquee = () => {
   const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    ref.current?.animate(
-      [
-        {
-          opacity: 1
-        },
-        {
-          opacity: 1,
-          offset: 0.1
-        },
-        {
-          opacity: 0,
-          offset: 0.2
-        },
-        {
-          opacity: 0
-        }
-      ],
-      {
-        fill: 'both',
-        timeline: new ViewTimeline({
-          subject: heroRef.current
-        }),
-        rangeStart: 'contain 0%',
-        rangeEnd: 'exit 100%'
-      }
-    )
-  }, [])
 
   return (
     <div
