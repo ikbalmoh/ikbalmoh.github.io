@@ -1,38 +1,50 @@
 import { useRef } from 'react'
 import { classNames } from 'utils'
-import styles from './styles.module.css'
+import { useMediaQuery } from 'react-responsive'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function About() {
   const ref = useRef(null)
+  const isLargeScreen = useMediaQuery({ minWidth: 768 })
+
+  const { scrollYProgress } = useScroll({ target: ref })
+  const headingOpacity = useTransform(scrollYProgress, (progress) =>
+    progress < 0.2
+      ? 1
+      : progress <= 0.4
+      ? 1 - (0.6 * (progress - 0.2)) / 0.2
+      : 0.4
+  )
+
+  const aboutPosition = useTransform(scrollYProgress, (progress) => {
+    const position =
+      progress < 0.2
+        ? 1
+        : progress <= 0.6
+        ? 1 - (0.6 * (progress - 0.2)) / 0.2
+        : 0
+    return isLargeScreen ? `${Math.max(position, 0) * 100}%` : '0%'
+  })
+
+  const aboutScale = useTransform(scrollYProgress, (progress) =>
+    isLargeScreen
+      ? Math.min(progress < 0.7 ? 0.8 : (1 * (100 * progress)) / 30, 1)
+      : 1
+  )
 
   return (
     <section
       id="about"
-      className={classNames(
-        styles.root,
-        'container relative z-[1] mx-auto md:min-h-[300vh]'
-      )}
+      className="container relative z-[1] mx-auto md:min-h-[300vh]"
       ref={ref}
     >
-      <div
-        className={classNames(
-          styles['about-wrapper'],
-          'md:sticky md:top-[15vh] min-h-[70vh] md:h-[70vh] overflow-hidden rounded-2xl p-3'
-        )}
-      >
-        <div
-          className={classNames(
-            'fixed inset-0 rounded-3xl border-[0.75rem] border-black bg-gradient-to-br from-black to-blue-900 bg-fixed hidden md:block',
-            styles['about-bg']
-          )}
-        ></div>
+      <div className="relative min-h-[70vh] overflow-hidden rounded-2xl p-3 md:sticky md:top-[15vh] md:h-[70vh]">
+        <div className="absolute inset-0 hidden rounded-3xl border-[0.75rem] border-black bg-gradient-to-br from-black to-blue-900 bg-fixed md:block"></div>
         <div className="h-full w-full items-center justify-center overflow-hidden rounded-2xl">
           <div className="relative h-full p-0 md:p-14">
-            <div
-              className={classNames(
-                styles['about-heading'],
-                'absolute inset-0 hidden md:flex h-full w-full shrink-0 grow-0 items-center p-3 rounded-xl'
-              )}
+            <motion.div
+              style={{ opacity: headingOpacity }}
+              className="hidden w-full shrink-0 grow-0 items-center rounded-xl px-3 py-5 transition-opacity duration-500 md:absolute md:inset-0 md:flex md:h-full md:py-3"
             >
               <h2
                 className={classNames(
@@ -46,8 +58,11 @@ export default function About() {
                 </span>{' '}
                 You
               </h2>
-            </div>
-            <div className={styles['about-container']}>
+            </motion.div>
+            <motion.div
+              style={{ left: aboutPosition, scale: aboutScale }}
+              className="relative w-full flex-col justify-center rounded-xl shadow-xl transition-transform duration-500 md:absolute md:inset-0 md:h-full md:overflow-hidden md:bg-white md:p-10 md:shadow-none"
+            >
               <h1
                 className="text-center text-3xl  text-gray-800 xl:text-5xl"
                 data-aos="fade-up"
@@ -96,7 +111,7 @@ export default function About() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
