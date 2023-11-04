@@ -8,10 +8,10 @@ import LottieAnimation from './LottieAnimation'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function Hero() {
-  const heroRef = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
-    target: heroRef,
+    target: ref,
     offset: ['0%', '70%']
   })
 
@@ -27,7 +27,7 @@ export default function Hero() {
       className={classNames(
         'h-[95vh] container relative z-0 mx-auto text-gray-500'
       )}
-      ref={heroRef}
+      ref={ref}
     >
       <motion.div
         style={{ opacity, scale }}
