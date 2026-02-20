@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { classNames } from 'utils'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from './hook'
+import { FaChevronCircleRight, } from 'react-icons/fa'
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null)
@@ -22,20 +23,27 @@ export default function About() {
           <div className="relative h-full p-0 md:p-14">
             <motion.div
               style={{ opacity: heading.opacity }}
-              className="hidden w-full shrink-0 grow-0 items-center rounded-xl px-3 py-5 md:absolute md:inset-0 md:flex md:h-full md:py-3"
+              className="relative hidden w-full shrink-0 grow-0 items-center rounded-xl px-3 py-5 md:absolute md:inset-0 md:flex md:h-full md:py-3"
             >
-              <h2
-                className={classNames(
-                  'font-medium text-center text-gray-500 md:text-white/60 text-4xl md:text-6xl p-0 md:px-6 md:max-w-xl mx-auto'
-                )}
-              >
-                <span className="text-gray-800 md:text-white">Hello,</span>
-                <br />
-                Nice to <span className="text-gray-800 md:text-white">
-                  See
-                </span>{' '}
-                You
-              </h2>
+              <div className='w-full flex flex-col justify-center items-center'>
+                <h3
+                  className={classNames(
+                    'font-medium text-center text-gray-500 md:text-white/60 text-2xl md:text-4xl p-0 md:px-6 md:max-w-xl mx-auto'
+                  )}
+                >
+                  <span className="text-gray-800 md:text-white">Glad you’re here</span>
+                </h3>
+                <h2
+                  className={classNames(
+                    'mt-3 font-medium text-center text-gray-500 md:text-white/60 text-3xl md:text-5xl p-0 md:px-6 md:max-w-xl mx-auto'
+                  )}
+                >
+                  Keep scrolling to know more <span className="text-gray-800 md:text-white">
+                    about me
+                  </span>
+                </h2>
+                <span className="text-gray-800 md:text-white absolute right-5 animate-pulse"><FaChevronCircleRight className='size-10' /></span>
+              </div>
             </motion.div>
             <motion.div
               style={{ left: about.position, scale: about.scale }}
@@ -61,21 +69,10 @@ export default function About() {
                   className="flex flex-1 flex-col justify-center text-xl text-gray-600"
                 >
                   <p>
-                    I&apos;m a passionate{' '}
-                    <span className="font-medium">Frontend Web</span> and{' '}
-                    <span className="font-medium">Mobile App</span> Developer
-                    with 5+ years of experience building scalable web and mobile
-                    applications.
+                    Top Rated Frontend Developer on Upwork with 7 years of experience building scalable, cross-platform web and mobile applications.
                   </p>
                   <p className="mt-2">
-                    Proficient in various frameworks such as{' '}
-                    <span className="font-medium">
-                      Next.js / React.js, Vue.js, React Native, Flutter, and
-                      Laravel
-                    </span>
-                    {', '}I continuously staying updated with the latest
-                    industry trends, I strive to deliver high-quality code and
-                    exceptional user experiences.
+                    I specialize in TypeScript, Dart, and frameworks like Next.js, React Native, and Flutter. Passionate about writing clean, maintainable code and delivering intuitive, reliable user experiences.
                   </p>
                   <p className="mt-5">
                     Want to talk to me? <br />

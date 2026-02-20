@@ -6,6 +6,8 @@ import ClientMarquee from './ClientMarquee'
 import { skills } from './constants'
 import LottieAnimation from './LottieAnimation'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import Lottie from 'lottie-react'
+import hello from '../../assets/hello.json'
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
@@ -37,15 +39,9 @@ export default function Hero() {
       >
         <div className="flex w-full flex-1 flex-col-reverse items-center justify-center py-5 md:flex-row md:flex-nowrap">
           <div className="flex h-full w-full flex-col items-start justify-center md:w-1/2">
-            <h2
-              className="mr-2 text-xl font-medium md:text-2xl"
-              data-aos="fade-up"
-              data-aos-duration="500"
-            >
-              Hi there 👋🏻
-            </h2>
+            <Lottie animationData={hello} className='w-40 h-20' />
             <h1
-              className={classNames('mt-1 text-3xl md:text-4xl font-medium')}
+              className={classNames('mt-5 text-3xl md:text-4xl font-medium')}
               data-aos="fade-up"
               data-aos-duration="1000"
             >

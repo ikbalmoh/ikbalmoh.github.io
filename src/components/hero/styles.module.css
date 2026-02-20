@@ -16,7 +16,7 @@
 }
 
 .marquee-track {
-  @apply flex shrink-0 grow-0 basis-auto items-center py-0.5 gap-3 grayscale;
+  @apply flex shrink-0 grow-0 basis-auto items-center py-0.5 gap-3;
   -webkit-animation: marquee-horizonal 15s linear infinite;
   animation: marquee-horizonal 15s linear infinite;
   will-change: transform;
