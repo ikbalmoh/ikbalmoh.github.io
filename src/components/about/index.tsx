@@ -59,9 +59,9 @@ export default function About() {
                 <div className="mb-5 mr-0 mt-2 md:mb-0 md:mr-8">
                   <img
                     data-aos="fade-up"
-                    src="/images/avatar.JPG"
+                    src="/images/ikbalmoh_400.jpeg"
                     alt="ikbalmoh"
-                    className="my-3 w-[120px] rounded-lg object-contain object-right-top shadow-lg md:my-0"
+                    className="my-3 w-[120px] object-contain object-right-top shadow-lg md:my-0 rounded-full"
                   />
                 </div>
                 <div
@@ -69,10 +69,11 @@ export default function About() {
                   className="flex flex-1 flex-col justify-center text-xl text-gray-600"
                 >
                   <p>
-                    Top Rated Frontend Developer on Upwork with 7 years of experience building scalable, cross-platform web and mobile applications.
+                    <span className='font-semibold'>Upwork Top Rated Frontend Developer</span> with 7 years of experience building scalable, cross-platform web and mobile applications.
                   </p>
                   <p className="mt-2">
-                    I specialize in TypeScript, Dart, and frameworks like Next.js, React Native, and Flutter. Passionate about writing clean, maintainable code and delivering intuitive, reliable user experiences.
+                    I specialize in TypeScript, Dart, and frameworks like <span className='font-semibold'>Next.js, React Native, and Flutter</span>.<br />
+                    Passionate about writing clean, maintainable code and delivering intuitive, reliable user experiences.
                   </p>
                   <p className="mt-5">
                     Want to talk to me? <br />
