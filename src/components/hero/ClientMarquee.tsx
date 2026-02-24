@@ -34,9 +34,9 @@ const ClientMarquee = () => {
   return (
     <div
       ref={ref}
-      className="-z-10 mx-auto mt-5 flex w-full max-w-3xl flex-col items-start justify-center py-1 md:mt-10 md:flex-row md:items-center"
+      className="-z-10 mx-auto mt-5 flex w-full max-w-3xl flex-col items-center justify-center py-1 md:mt-10 md:flex-row md:items-center md:text-left"
     >
-      <h2 className="mr-0 flex-1 whitespace-nowrap font-medium text-gray-700 md:mr-6">
+      <h2 className="mr-0 flex-1 whitespace-nowrap font-medium text-gray-700 md:mr-6 text-center md:text-left">
         Contributed for
       </h2>
       <div className="relative mt-4 flex w-full overflow-hidden py-2 md:mt-0">

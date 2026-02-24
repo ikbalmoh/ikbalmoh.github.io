@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="container relative z-[1] mx-auto md:min-h-[300vh]"
+      className="container relative z-[1] mx-auto md:min-h-[300vh] scroll-m-20"
       ref={ref}
     >
       <div className="relative min-h-[70vh] overflow-hidden rounded-2xl p-3 md:sticky md:top-[15vh] md:h-[70vh]">
@@ -59,7 +59,7 @@ export default function About() {
                 <div className="mb-5 mr-0 mt-2 md:mb-0 md:mr-8">
                   <img
                     data-aos="fade-up"
-                    src="/images/ikbalmoh_400.jpeg"
+                    src="/images/ikbalmoh_rounded.png"
                     alt="ikbalmoh"
                     className="my-3 w-[120px] object-contain object-right-top shadow-lg md:my-0 rounded-full"
                   />

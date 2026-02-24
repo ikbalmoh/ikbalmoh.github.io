@@ -100,7 +100,7 @@ export default function Hero() {
             </div>
           </div>
           <div
-            className="mb-5 flex w-full items-center justify-center md:mb-0 md:w-1/2"
+            className="mb-5 hidden md:flex w-full items-center justify-center md:mb-0 md:w-1/2"
             data-aos="fade-left"
             data-aos-duration="2000"
           >
