@@ -49,6 +49,7 @@ export const useScrollAnimation = ({
     about: {
       position: aboutPosition,
       scale: aboutScale
-    }
+    },
+    scrollYProgress: scrollYProgress.get()
   }
 }

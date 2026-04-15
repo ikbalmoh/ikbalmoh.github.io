@@ -1,13 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import MobileNav from './MobileNav'
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 export default function Header() {
   const [active, setActive] = useState<boolean>(false)
-
-  const links = [
-    { id: 'about', label: 'About' },
-    { id: 'work', label: 'Work' }
-  ]
+  const [activeSection, setActiveSection] = useState<string>('home')
 
   return (
     <nav
@@ -17,40 +14,36 @@ export default function Header() {
     >
       <div className="mx-auto flex h-14 w-full max-w-none items-center justify-between gap-4 border-b border-gray-300/50 px-4 md:h-16 md:max-w-6xl md:px-5 xl:px-0">
         <a href="#home" className="w-min select-none md:w-[200px]">
-          <h1 className="bg-gradient-to-r from-black via-blue-900 via-50% to-blue-600 bg-clip-text text-xl font-semibold text-transparent md:text-2xl">
+          <h1 className="bg-gradient-to-r text-black bg-clip-text text-xl font-semibold md:text-2xl">
             IkbalMoh
           </h1>
         </a>
-        <div className="hidden flex-1 items-center justify-center md:flex md:flex-row">
-          {links.map((link) => (
-            <a
-              key={link.id}
-              className="relative rounded-md bg-transparent px-5 py-2 text-sm text-gray-500 transition-colors duration-200 hover:bg-gray-200/80 hover:text-gray-700"
-              href={`#${link.id}`}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-        <div className="flex w-min justify-end md:w-[200px]">
+        <div className="flex w-min justify-end items-center gap-2">
+          <a
+            href="https://www.linkedin.com/in/ikbalmoh"
+            rel="noreferrer"
+            target="_blank"
+            className="text-gray-400 transition-colors duration-200 hover:text-blue-700"
+          >
+            <AiFillLinkedin size={24} />
+          </a>
+          <a
+            href="https://github.com/ikbalmoh"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-400 transition-colors duration-200 hover:text-gray-700"
+          >
+            <AiFillGithub size={24} />
+          </a>
           <a
             href="https://www.cakeresume.com/ikbalmoh"
             target="_blank"
-            className="hidden text-sm text-blue-700 transition-colors duration-500 hover:font-medium hover:text-blue-900 md:block"
+            className="whitespace-nowrap hidden text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-gray-900 md:block"
             rel="external noreferrer"
           >
             View Resume
           </a>
-          <button
-            className="flex flex-col items-center justify-center md:hidden"
-            onClick={() => setActive(true)}
-          >
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
-          </button>
         </div>
-        <MobileNav visible={active} onDismiss={() => setActive(false)} />
       </div>
     </nav>
   )
