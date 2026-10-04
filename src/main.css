@@ -5,8 +5,15 @@
 @layer base {
   html {
     @apply scroll-smooth;
+    color-scheme: light;
+    --page-background: #fff;
+  }
+  html.dark {
+    color-scheme: dark;
+    --page-background: #111827;
   }
   body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
     overflow-x: hidden;
   }
 }

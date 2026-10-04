@@ -1,30 +1,24 @@
-import { classNames } from 'utils'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import { skills } from './constants'
-import styles from './styles.module.css'
+import RotatingText from 'components/shared/rotating-text'
 
 export default function Skills() {
   return (
-    <div
-      className="mt-3 flex h-8 overflow-hidden text-xl"
-      data-aos="fade-up"
-      data-aos-duration="1500"
-    >
-      <h3 className="mr-2 text-2xl">expert in</h3>
-      <div
-        className={classNames(
-          styles.rolling,
-          'flex flex-col items-start gap-1'
-        )}
-      >
-        {skills.map((skill, idx) => (
-          <h3
-            key={skill + idx}
-            className="h-8 bg-gray-800 px-2 text-2xl font-medium text-white"
-          >
-            {skill}
-          </h3>
-        ))}
-      </div>
-    </div>
+    <RotatingText
+  texts={skills}
+  mainClassName="px-1 sm:px-2 bg-gray-100 overflow-hidden py-0.5 sm:py-1 justify-center rounded text-lg md:text-xl font-semibold text-gray-800 dark:bg-gray-800 dark:text-gray-100"
+  staggerFrom="last"
+  initial={{ y: "100%" }}
+  animate={{ y: 0 }}
+  exit={{ y: "-120%" }}
+  staggerDuration={0.025}
+  splitLevelClassName="overflow-hidden"
+  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+  rotationInterval={2000}
+  splitBy="characters"
+  auto
+  loop
+/>
   )
 }

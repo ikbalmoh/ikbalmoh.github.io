@@ -3,7 +3,7 @@ import projects from './projects.json'
 import ProjectCard from './ProjectCard'
 import { useRef, useState } from 'react'
 import { AiOutlineFileSearch } from 'react-icons/ai'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 
 export default function Work() {
   const filters: { [key: string]: string } = {
@@ -26,14 +26,17 @@ export default function Work() {
     <motion.section
       ref={sectionRef}
       id="work"
-      className="relative z-[1] scroll-m-10 mx-auto bg-white"
+      className="relative z-[1] scroll-m-10 w-full bg-white md:bg-gray-50/90 dark:bg-gray-900 dark:md:bg-gray-950/90"
     >
       <div className="container mx-auto py-10">
         <div className="flex w-full flex-col md:justify-centerpy-5">
           <div className="mx-auto my-5 px-5 text-center" data-aos="fade-up">
-            <h1 className="text-center text-3xl text-gray-500 md:text-5xl">
-              Featured <span className="text-gray-800">Work</span>
+            <h1 className="text-center text-3xl text-gray-500 md:text-5xl dark:text-gray-300">
+              My <span className="text-gray-800 dark:text-gray-100">Work</span>
             </h1>
+            <h4 className="mt-5 text-center text-base font-normal text-gray-500 dark:text-gray-300">
+              Selected work I've taken on in the past.
+            </h4>
           </div>
           <div
             className="my-5 flex items-center justify-center gap-6 md:mt-10"
@@ -46,8 +49,8 @@ export default function Work() {
                 className={classNames(
                   'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500',
                   activeFilter === key
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-transparent text-gray-500 hover:text-gray-800'
+                    ? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900'
+                    : 'bg-transparent text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'
                 )}
               >
                 {filters[key]}
@@ -76,7 +79,7 @@ export default function Work() {
               ))}
             </div>
           ) : (
-            <div className="flex min-h-[300px] flex-col items-center justify-center p-5 text-gray-500">
+            <div className="flex min-h-[300px] flex-col items-center justify-center p-5 text-gray-500 dark:text-gray-300">
               <div data-aos="fade-up" data-aos-duration="500">
                 <AiOutlineFileSearch size={60} />
               </div>

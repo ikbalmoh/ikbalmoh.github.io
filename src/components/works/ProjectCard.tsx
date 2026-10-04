@@ -14,7 +14,7 @@ export default function ProjectCard({ project, featured }: Props) {
   return (
     <div
       ref={ref}
-      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:shadow-xl md:w-auto"
+      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:shadow-xl md:w-auto dark:border-gray-700"
     >
       <div
         style={{
@@ -38,7 +38,7 @@ export default function ProjectCard({ project, featured }: Props) {
           />
         </div>
       </div>
-      <div className="w-full bg-white relative h-24">
+      <div className="w-full bg-white relative h-24 dark:bg-gray-800 dark:text-gray-100">
         <div className="h-10 px-3 pt-3">
           <h1 className={featured ? 'text-xl font-semibold' : 'text-lg font-medium'}>{project.title}</h1>
         </div>
@@ -49,7 +49,7 @@ export default function ProjectCard({ project, featured }: Props) {
                 <div className="mr-1 flex flex-1 flex-wrap items-center gap-1 lg:gap-2">
                   {project.tags.map((tag) => (
                     <span
-                      className="rounded-md bg-gray-100 px-1 py-0.5 text-xs text-gray-700 lg:px-3 lg:py-1"
+                      className="rounded-md bg-gray-100 px-1 py-0.5 text-xs text-gray-700 lg:px-3 lg:py-1 dark:bg-gray-700 dark:text-gray-200"
                       key={tag}
                     >
                       {tag}
@@ -60,13 +60,13 @@ export default function ProjectCard({ project, featured }: Props) {
                   <img
                     src={`/images/clients/${project.client}.png`}
                     alt={project.client}
-                    className="h-6 w-auto object-contain md:h-8"
+                    className="h-6 w-auto object-contain md:h-8 dark:rounded dark:bg-white dark:px-1"
                   />
                 ) : null}
               </div>
             </div>
             <div className="flex items-start p-3">
-              <div className="mr-2 flex-1 text-sm text-gray-600">
+              <div className="mr-2 flex-1 text-sm text-gray-600 dark:text-gray-300">
                 {project.description}
               </div>
               {project.link ? (
@@ -74,7 +74,7 @@ export default function ProjectCard({ project, featured }: Props) {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center rounded border border-gray-800 px-2 py-1 text-xs font-medium text-gray-800 transition-colors duration-500 hover:bg-gray-800 hover:text-white"
+                  className="flex items-center rounded border border-gray-800 px-2 py-1 text-xs font-medium text-gray-800 transition-colors duration-500 hover:bg-gray-800 hover:text-white dark:border-gray-400 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900"
                 >
                   Preview <SlArrowRight className="ml-1" />
                 </a>

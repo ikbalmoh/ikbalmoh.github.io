@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from 'framer-motion'
+import { useScroll, useTransform } from 'motion/react'
 import { RefObject } from 'react'
 import { useMediaQuery } from 'react-responsive'
 

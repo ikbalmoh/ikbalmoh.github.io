@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { classNames } from 'utils'
-import { motion, useTransform } from 'framer-motion'
+import { motion, useTransform } from 'motion/react'
 import { useScrollAnimation } from './hook'
 import { FaChevronCircleDown } from 'react-icons/fa'
 import Work from 'components/works'
