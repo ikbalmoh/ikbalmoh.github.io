@@ -14,7 +14,7 @@ const App = () => {
   return (
     <ErrorBoundary fallback={<div>Something went wrong</div>}>
       <ThemeProvider>
-        <main className="flex min-h-screen flex-col scroll-smooth bg-white pb-32 font-exo dark:bg-gray-900 dark:text-gray-100">
+        <main className="flex min-h-screen flex-col scroll-smooth bg-white pb-32 font-exo dark:bg-gray-950 dark:text-gray-100">
           <Header />
           <Hero />
           {/* <About /> */}

@@ -1,12 +1,46 @@
 [
   {
+    "title": "Songcry",
+    "year": 2026,
+    "description": "Geolocation based mucis platform",
+    "image": "/images/projects/songcry.png",
+    "tags": ["flutter"],
+    "link": "https://apps.apple.com/us/app/songcry-new-music-near-you/id6760088416",
+    "client": "songcry.svg",
+    "gradient": ["#000000","#000000"],
+    "type": "web"
+  },
+  {
+    "title": "Tunezhub",
+    "year": 2026,
+    "description": "Tunezhub is a platform to connect local musicians with students",
+    "image": "/images/projects/tunezhub-web.png",
+    "tags": ["next.js", "react-native"],
+    "link": "https://tunezhub.com",
+    "client": "tunezhub.svg",
+    "gradient": ["#1EBED4","#14E6CB"],
+    "type": "web"
+  },
+  {
+    "title": "Verity Health App",
+    "year": 2025,
+    "description": "Verity is a motivational incentive platform for Behavioral Health organizations, designed for both patients and staff",
+    "image": "/images/clients/verity.svg",
+    "tags": ["react-native"],
+    "link": "https://apps.apple.com/us/app/verity-mental-health-made-fun/id6510916597",
+    "client": "verity.svg",
+    "gradient": ["#412357","#863692"],
+    "type": "web",
+    "scoroll": false
+  },
+  {
     "title": "BMKG Maritim",
     "year": 2022,
     "description": "A brand new BMKG's maritim website, displaying a weather forecasts",
     "image": "/images/projects/bmkg.jpeg",
-    "tags": ["next.js", "tailwind", "leaflet"],
+    "tags": ["next.js", "leaflet"],
     "link": "https://maritim-bmkg.vercel.app",
-    "client": "bmkg",
+    "client": "bmkg.png",
     "gradient": ["rgb(255 185 27)", "rgb(124 164 255)"],
     "type": "web"
   },
@@ -15,29 +49,29 @@
     "year": 2022,
     "description": "Offline First Mobile Point of Sales",
     "image": "/images/projects/selleri.png",
-    "tags": ["react native", "redux", "firebase"],
-    "link": "https://play.google.com/store/apps/details?id=com.dgti.selleri&hl=en-ID",
-    "client": "dgti",
-    "gradient": ["rgb(103, 202, 118)", "rgb(87, 159, 222)"],
+    "tags": ["flutter", "firebase"],
+    "link": "https://play.google.com/store/apps/details?id=com.dgti.selleri.prod&hl=en-ID",
+    "client": "selleri.png",
+    "gradient": ["#39ada2"],
     "type": "mobile"
   },
   {
-    "title": "MAP Admin Dashboard",
+    "title": "Merchant App Pertamina",
     "year": 2022,
     "description": "Admin dashboard to manage pertamina's merchants",
     "image": "/images/projects/pertamina-merchant.png",
     "tags": ["react.js", "redux", "chart.js"],
-    "client": "telkom",
+    "client": "telkom.png",
     "gradient": ["#ED213A", "#93291E"],
     "type": "web"
   },
   {
-    "title": "Pijar Belajar Dashboard",
+    "title": "Pijar Belajar",
     "year": 2022,
-    "description": "Dashboard for managing Pijar member schools",
+    "description": "Dashboard for managing Pijar's member schools",
     "image": "/images/projects/pijar.png",
     "tags": ["react.js", "redux"],
-    "client": "pijar",
+    "client": "pijar.png",
     "gradient": ["#12c2e9", "#c471ed", "#f64f59"],
     "type": "web"
   },
@@ -48,30 +82,8 @@
     "image": "/images/projects/dg-company.png",
     "tags": ["react native", "firebase", "redux"],
     "link": "https://play.google.com/store/apps/details?id=com.dgti.stm",
-    "client": "dgti",
+    "client": "dgti.png",
     "gradient": ["rgb(32 174 226)", "#9089fc"],
     "type": "mobile"
-  },
-  {
-    "title": "Sapakat",
-    "year": 2022,
-    "description": "Map to illustrate the distribution of community welfare",
-    "image": "/images/projects/sapakat.jpeg",
-    "tags": ["next.js", "tailwind", "leaflet"],
-    "link": "https://dms-sapakat.kabgarut.com",
-    "client": "garutkab",
-    "gradient": ["#ff4b1f", "#ff9068"],
-    "type": "web"
-  },
-  {
-    "title": "SIMKP DISHUB Garut",
-    "year": 2021,
-    "description": "A public transport permit management system in the city of Garut",
-    "image": "/images/projects/simkp.png",
-    "tags": ["vue.js", "laravel"],
-    "link": "https://play.google.com/store/apps/details?id=com.dgti.stm",
-    "client": "dishub",
-    "gradient": ["#1e3a8a", "rgb(254 186 0)"],
-    "type": "web"
   }
 ]

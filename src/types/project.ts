@@ -9,4 +9,5 @@ export type Project = {
   client?: string
   gradient: string[]
   type: string
+  scoroll?: boolean
 }

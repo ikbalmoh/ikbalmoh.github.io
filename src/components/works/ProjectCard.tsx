@@ -33,7 +33,7 @@ export default function ProjectCard({ project, featured }: Props) {
             alt={project.title}
             className={classNames(
               'h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s]',
-              featured ? 'md:group-hover:translate-y-[calc(20rem-100%)]' : 'md:group-hover:translate-y-[calc(12rem-100%)]'
+              project.scoroll == false ? '' : (featured ? 'md:group-hover:translate-y-[calc(20rem-100%)]' : 'md:group-hover:translate-y-[calc(12rem-100%)]')
             )}
           />
         </div>
@@ -58,7 +58,7 @@ export default function ProjectCard({ project, featured }: Props) {
                 </div>
                 {project.client ? (
                   <img
-                    src={`/images/clients/${project.client}.png`}
+                    src={`/images/clients/${project.client}`}
                     alt={project.client}
                     className="h-6 w-auto object-contain md:h-8 dark:rounded dark:bg-white dark:px-1"
                   />

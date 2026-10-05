@@ -38,9 +38,10 @@ export default function Hero() {
 
   const opacity = useTransform(
     scrollYProgress,
-    isMobile ? [0.2, 0.8] : [0.55, 1],
+    isMobile ? [0.2, 0.8] : [0.9, 1],
     [1, 0]
   )
+  
   const scale = useTransform(
     scrollYProgress,
     isMobile ? [0.1, 1] : [0.4, 1],
@@ -73,29 +74,29 @@ export default function Hero() {
             <h3 className="text-xl md:text-2xl font-medium text-gray-800 dark:text-gray-100">
               Hey, I'm Ikbal
             </h3>
-            <h1 className='my-3 font-bold text-3xl md:text-5xl font-serif text-gray-800 dark:text-gray-100'><span className="text-gradient bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">AI</span> & Frontend Engineer</h1>
+            <h1 className='my-3 font-bold text-3xl md:text-5xl font-serif text-gray-800 dark:text-gray-100'><span className="text-gradient bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">Frontend</span> Developer</h1>
             <h2
               className={classNames('mt-3 text-xl md:text-2xl')}
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              I engineer complex{' '}
+              I build web and mobile apps with{' '}
               <Skills />
             </h2>
             <h2 className={classNames('text-xl md:text-2xl')}
             data-aos="fade-up"
               data-aos-duration="1500"
             >
-              with a focus on{' '}
-              <span className="font-semibold text-gray-800 dark:text-gray-100">the craft</span>.
+              designed around{' '}
+              <span className="font-semibold text-gray-800 dark:text-gray-100">your users</span>.
             </h2>
 
             {/* Mobile-only bio: visible before any scrolling */}
             <div className="mt-6 block md:hidden space-y-3">
               <p className="text-sm text-gray-500 leading-relaxed dark:text-gray-300">
-                7 years across web and mobile — TypeScript, Dart, React,
-                Flutter. I care less about the stack and more about the outcome:
-                software people actually want to use.
+                I turn your designs into web and mobile apps with React,
+                Next.js, and Flutter. 7 years of frontend experience, focused
+                on the details your users notice.
               </p>
               <div className="flex items-center gap-1.5">
                 <span className="inline-block h-2 w-2 rounded-full bg-green-400" />
@@ -107,7 +108,7 @@ export default function Hero() {
                 href="/#work"
                 className="inline-block rounded-full bg-gray-800 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300"
               >
-                See my work
+                View my projects
               </a>
             </div>
           </motion.div>
@@ -126,7 +127,7 @@ export default function Hero() {
                 src="/images/ikbalmoh-holografik.png"
                 pattern="floyd"
                 pixelSize={2}
-                inkColor={theme === 'dark' ? '#111827' : '#ffffff'}
+                inkColor={theme === 'dark' ? '#000000' : '#ffffff'}
                 paperColor={theme === 'dark' ? '#e5e7eb' : '#0f0f0f'}
                 revealRadius={200}
                 revealProgress={photoReveal}
@@ -159,15 +160,15 @@ export default function Hero() {
 
               <div id="about-content" className="space-y-4">
                 <p className="text-lg font-medium text-gray-800 leading-snug dark:text-gray-100">
-                  Frontend is where design meets engineering. That&apos;s where
-                  I live.
+                  Your design, ready for real users.
                 </p>
                 <p className="text-base text-gray-500 leading-relaxed dark:text-gray-300">
                   <span className="font-semibold">
-                    Top Rated on Upwork | 7 Years Exp.
+                    Top Rated on Upwork · 7 years of experience.
                   </span>{' '}
-                  Whether it's TypeScript or Dart, I care less about the stack
-                  and more about building software people actually want to use.
+                  I turn designs into responsive websites and mobile apps
+                  using React, Next.js, and Flutter, with care for how every
+                  screen looks and feels.
                 </p>
               </div>
 
@@ -198,7 +199,7 @@ export default function Hero() {
                 href="/#work"
                 className="self-start rounded-full bg-gray-800 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300"
               >
-                See my work
+                View my projects
               </a>
             </motion.div>
           </div>

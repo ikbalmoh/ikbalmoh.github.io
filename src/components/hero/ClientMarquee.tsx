@@ -41,7 +41,7 @@ const ClientMarquee = () => {
       className="relative mx-auto mt-5 flex w-full max-w-3xl flex-col items-center justify-center py-1 md:mt-10 md:flex-row md:items-center md:text-left"
     >
       <h2 className="mr-0 flex-1 whitespace-nowrap font-medium text-gray-700 md:mr-6 text-center md:text-left dark:text-gray-300">
-        Trusted by
+        Built for
       </h2>
       <div
         className={`relative mt-4 flex w-full overflow-hidden py-2 md:mt-0 ${styles['marquee-wrapper']}`}

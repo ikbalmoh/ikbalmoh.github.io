@@ -38,25 +38,6 @@ export default function Work() {
               Selected work I've taken on in the past.
             </h4>
           </div>
-          <div
-            className="my-5 flex items-center justify-center gap-6 md:mt-10"
-            data-aos="fade-up"
-          >
-            {Object.keys(filters).map((key) => (
-              <button
-                key={key}
-                onClick={() => setActiveFilter(key)}
-                className={classNames(
-                  'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-500',
-                  activeFilter === key
-                    ? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900'
-                    : 'bg-transparent text-gray-500 hover:text-gray-800 dark:text-gray-300 dark:hover:text-white'
-                )}
-              >
-                {filters[key]}
-              </button>
-            ))}
-          </div>
           {filteredProjects().length > 0 ? (
             <div
               className={classNames(
