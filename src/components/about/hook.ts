@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from 'framer-motion'
+import { useScroll, useTransform } from 'motion/react'
 import { RefObject } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
@@ -49,6 +49,7 @@ export const useScrollAnimation = ({
     about: {
       position: aboutPosition,
       scale: aboutScale
-    }
+    },
+    scrollYProgress: scrollYProgress.get()
   }
 }

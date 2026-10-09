@@ -8,10 +8,10 @@
   @apply absolute inset-0 z-0 pointer-events-none;
   background-image: linear-gradient(
     90deg,
-    #fff,
-    hsla(0, 0%, 100%, 0) 20%,
-    hsla(0, 0%, 100%, 0) 80%,
-    #fff
+    var(--page-background),
+    transparent 20%,
+    transparent 80%,
+    var(--page-background)
   );
 }
 

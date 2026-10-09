@@ -1,115 +1,212 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
-import styles from './styles.module.css'
 import { classNames } from 'utils'
 import ClientMarquee from './ClientMarquee'
-import { skills } from './constants'
-import LottieAnimation from './LottieAnimation'
-import { motion, useScroll, useTransform } from 'framer-motion'
-import Lottie from 'lottie-react'
-import hello from '../../assets/hello.json'
+import { motion, useScroll, useTransform } from 'motion/react'
+import Skills from './Skills'
+import DitherVeil from 'components/shared/dither-vell'
+import useTheme from 'utils/hooks/useTheme'
 
 export default function Hero() {
+  const { theme } = useTheme()
   const ref = useRef<HTMLDivElement>(null)
+
+  const [isMobile, setIsMobile] = useState(true)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0%', '70%']
+    offset: ['start start', 'end start']
   })
 
-  const opacity = useTransform(scrollYProgress, (progress) => 1 - progress)
+  // Scrolling animations mapping
+  const textX = useTransform(scrollYProgress, [0, 0.3], ['0%', '-120%'])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0])
+
+  const photoX = useTransform(scrollYProgress, [0, 0.3], ['0%', '-120%'])
+  const photoReveal = useTransform(scrollYProgress, [0, 0.15], [0, 1])
+  const photoRotate = useTransform(scrollYProgress, [0, 0.30], [0, 8])
+
+  const aboutX = useTransform(scrollYProgress, [0, 0.3], ['100%', '0%'])
+  const aboutOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1])
+
+  const opacity = useTransform(
+    scrollYProgress,
+    isMobile ? [0.2, 0.8] : [0.9, 1],
+    [1, 0]
+  )
+  
   const scale = useTransform(
     scrollYProgress,
-    (progress) => 1 + ((0.9 - 1) * (progress * 100)) / 100
+    isMobile ? [0.1, 1] : [0.4, 1],
+    [1, 0.6]
   )
 
   return (
     <section
       id="home"
       className={classNames(
-        'h-[95vh] container relative z-0 mx-auto text-gray-500'
+        'h-100vh md:h-[200vh] relative z-0 mx-auto text-gray-500 dark:text-gray-300'
       )}
       ref={ref}
     >
       <motion.div
         style={{ opacity, scale }}
         className={classNames(
-          'container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[95vh] scale-100 pb-5'
+          'transform container fixed inset-0 z-0 mx-auto flex flex-col items-start justify-center h-[100vh] scale-100 pb-5'
         )}
       >
-        <div className="flex w-full flex-1 flex-col-reverse items-center justify-center py-5 md:flex-row md:flex-nowrap">
-          <div className="flex h-full w-full flex-col items-start justify-center md:w-1/2">
-            <Lottie animationData={hello} className='w-40 h-20' />
-            <h1
-              className={classNames('mt-5 text-3xl md:text-4xl font-medium')}
+        <div className="flex w-full flex-1 flex-col-reverse items-center justify-center pt-5 md:flex-row md:flex-nowrap gap-8">
+          {/* Left: text content */}
+          <motion.div
+            style={{
+              x: isMobile ? 0 : textX,
+              opacity: isMobile ? 1 : textOpacity
+            }}
+            className="flex h-full w-full flex-col items-start justify-center md:w-1/2"
+          >
+            <h3 className="text-xl md:text-2xl font-medium text-gray-800 dark:text-gray-100">
+              Hey, I'm Ikbal
+            </h3>
+            <h1 className='my-3 font-bold text-3xl md:text-5xl font-serif text-gray-800 dark:text-gray-100'><span className="text-gradient bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent dark:from-indigo-400 dark:to-purple-400">Frontend</span> Developer</h1>
+            <h2
+              className={classNames('mt-3 text-xl md:text-2xl')}
               data-aos="fade-up"
               data-aos-duration="1000"
             >
-              I&apos;m a{' '}
-              <span className="font-semibold text-gray-800">Frontend Web</span>{' '}
-              & <span className="font-semibold text-gray-800">Mobile App</span>{' '}
-              Developer
-            </h1>
-            <div
-              className="mt-3 flex h-8 overflow-hidden text-xl"
-              data-aos="fade-up"
+              I build web and mobile apps with{' '}
+              <Skills />
+            </h2>
+            <h2 className={classNames('text-xl md:text-2xl')}
+            data-aos="fade-up"
               data-aos-duration="1500"
             >
-              <h3 className="mr-2 text-2xl">expert in</h3>
-              <div
-                className={classNames(
-                  styles.rolling,
-                  'flex flex-col items-start gap-1'
-                )}
-              >
-                {skills.map((skill, idx) => (
-                  <h3
-                    key={skill + idx}
-                    className="h-8 bg-gray-800 px-2 text-2xl font-medium text-white"
-                  >
-                    {skill}
-                  </h3>
-                ))}
+              designed around{' '}
+              <span className="font-semibold text-gray-800 dark:text-gray-100">your users</span>.
+            </h2>
+
+            {/* Mobile-only bio: visible before any scrolling */}
+            <div className="mt-6 block md:hidden space-y-3">
+              <p className="text-sm text-gray-500 leading-relaxed dark:text-gray-300">
+                I turn your designs into web and mobile apps with React,
+                Next.js, and Flutter. 7 years of frontend experience, focused
+                on the details your users notice.
+              </p>
+              <div className="flex items-center gap-1.5">
+                <span className="inline-block h-2 w-2 rounded-full bg-green-400" />
+                <span className="text-xs font-semibold text-green-600 dark:text-green-400">
+                  Upwork Top Rated
+                </span>
               </div>
+              <a
+                href="/#work"
+                className="inline-block rounded-full bg-gray-800 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300"
+              >
+                View my projects
+              </a>
             </div>
-            <div
-              className="mt-8 flex gap-3"
-              data-aos="fade-up"
-              data-aos-duration="2000"
+          </motion.div>
+
+          {/* Right: photo ↔ about panel */}
+          <div className="relative mb-5 hidden md:block w-full md:mb-0 md:w-1/2 h-full">
+            {/* Photo */}
+            <motion.div
+              className="absolute inset-0 flex flex-col justify-center"
+              style={{
+                x: photoX,
+                rotate: photoRotate
+              }}
             >
+              <DitherVeil
+                src="/images/ikbalmoh-holografik.png"
+                pattern="floyd"
+                pixelSize={2}
+                inkColor={theme === 'dark' ? '#000000' : '#ffffff'}
+                paperColor={theme === 'dark' ? '#e5e7eb' : '#0f0f0f'}
+                revealRadius={200}
+                revealProgress={photoReveal}
+                softness={0.6}
+                linger={1}
+                fit="cover"
+                rimColor="#a78bfa"
+                palette="duotone"
+                levels={2}
+                contrast={1.15}
+                brightness={0}
+                rim={0}
+                reverse={false}
+                wander={false}
+                clickBurst
+                className='w-full h-full object-contain'
+            />
+            </motion.div>
+            {/* About panel */}
+            <motion.div
+              className="absolute inset-0 flex flex-col justify-center gap-6 px-2"
+              style={{
+                x: isMobile ? 0 : aboutX,
+                opacity: aboutOpacity
+              }}
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-300">
+                About me
+              </p>
+
+              <div id="about-content" className="space-y-4">
+                <p className="text-lg font-medium text-gray-800 leading-snug dark:text-gray-100">
+                  Your design, ready for real users.
+                </p>
+                <p className="text-base text-gray-500 leading-relaxed dark:text-gray-300">
+                  <span className="font-semibold">
+                    Top Rated on Upwork · 7 years of experience.
+                  </span>{' '}
+                  I turn designs into responsive websites and mobile apps
+                  using React, Next.js, and Flutter, with care for how every
+                  screen looks and feels.
+                </p>
+              </div>
+
+              {/* Social links */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://github.com/ikbalmoh"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800 transition-colors dark:text-gray-300 dark:hover:text-white"
+                >
+                  <AiFillGithub size={18} />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/ikbalmoh"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-800 transition-colors dark:text-gray-300 dark:hover:text-white"
+                >
+                  <AiFillLinkedin size={18} />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+
+              {/* CTA */}
               <a
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                href="https://www.linkedin.com/in/ikbalmoh"
-                rel="noreferrer"
-                target="_blank"
-                className="text-blue-700 transition-colors duration-200 hover:text-blue-600"
+                href="/#work"
+                className="self-start rounded-full bg-gray-800 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-300"
               >
-                <AiFillLinkedin size={30} />
+                View my projects
               </a>
-              <a
-                data-aos="fade-up"
-                data-aos-duration="1400"
-                href="https://github.com/ikbalmoh"
-                target="_blank"
-                rel="noreferrer"
-                className="text-gray-800 transition-colors duration-200 hover:text-blue-600"
-              >
-                <AiFillGithub size={30} />
-              </a>
-            </div>
-          </div>
-          <div
-            className="mb-5 hidden md:flex w-full items-center justify-center md:mb-0 md:w-1/2"
-            data-aos="fade-left"
-            data-aos-duration="2000"
-          >
-            <LottieAnimation />
+            </motion.div>
           </div>
         </div>
         <ClientMarquee />
       </motion.div>
-      <div className="h-[95vh]"></div>
+      <div className="h-screen"></div>
     </section>
   )
 }

@@ -1,9 +1,7 @@
 export const skills: Array<string> = [
-  'Typescript',
+  'TypeScript',
   'React.js',
-  'Vue.js',
+  'Next.js',
   'React Native',
   'Flutter',
-  'Laravel',
-  'Typescript'
 ]

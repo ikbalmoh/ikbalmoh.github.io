@@ -5,15 +5,16 @@ import { SlArrowRight } from 'react-icons/sl'
 
 type Props = {
   project: Project
+  featured?: boolean
 }
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project, featured }: Props) {
   const ref = useRef<HTMLDivElement>(null)
 
   return (
     <div
       ref={ref}
-      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:shadow-xl md:w-auto"
+      className="group w-full scale-100 overflow-hidden rounded-lg border border-gray-100 shadow-none transition-all duration-500 will-change-transform hover:scale-105 hover:shadow-xl md:w-auto dark:border-gray-700"
     >
       <div
         style={{
@@ -21,21 +22,25 @@ export default function ProjectCard({ project }: Props) {
             ', '
           )})`
         }}
-        className={
-          'flex h-[10rem] w-full items-end overflow-hidden md:h-[12rem]'
-        }
+        className={classNames(
+          'flex h-[10rem] w-full items-end overflow-hidden',
+          featured ? 'md:h-[20rem]' : 'md:h-[12rem]'
+        )}
       >
         <div className="h-full w-full origin-bottom scale-75  opacity-90 transition-[transform,opacity] duration-1000 will-change-transform group-hover:scale-100 group-hover:opacity-100">
           <img
             src={project.image}
             alt={project.title}
-            className="h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s] md:group-hover:translate-y-[calc(12rem-100%)]"
+            className={classNames(
+              'h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s]',
+              project.scoroll == false ? '' : (featured ? 'md:group-hover:translate-y-[calc(20rem-100%)]' : 'md:group-hover:translate-y-[calc(12rem-100%)]')
+            )}
           />
         </div>
       </div>
-      <div className={classNames('w-full bg-white relative h-24')}>
+      <div className="w-full bg-white relative h-24 dark:bg-gray-800 dark:text-gray-100">
         <div className="h-10 px-3 pt-3">
-          <h1 className="text-lg font-medium">{project.title}</h1>
+          <h1 className={featured ? 'text-xl font-semibold' : 'text-lg font-medium'}>{project.title}</h1>
         </div>
         <div className="h-14 overflow-hidden">
           <div className="z-0 flex translate-y-0 flex-col delay-500 duration-500 will-change-transform group-hover:-translate-y-14">
@@ -44,7 +49,7 @@ export default function ProjectCard({ project }: Props) {
                 <div className="mr-1 flex flex-1 flex-wrap items-center gap-1 lg:gap-2">
                   {project.tags.map((tag) => (
                     <span
-                      className="rounded-md bg-gray-100 px-1 py-0.5 text-xs text-gray-700 lg:px-3 lg:py-1"
+                      className="rounded-md bg-gray-100 px-1 py-0.5 text-xs text-gray-700 lg:px-3 lg:py-1 dark:bg-gray-700 dark:text-gray-200"
                       key={tag}
                     >
                       {tag}
@@ -53,15 +58,15 @@ export default function ProjectCard({ project }: Props) {
                 </div>
                 {project.client ? (
                   <img
-                    src={`/images/clients/${project.client}.png`}
+                    src={`/images/clients/${project.client}`}
                     alt={project.client}
-                    className="h-6 w-auto object-contain md:h-8"
+                    className="h-6 w-auto object-contain md:h-8 dark:rounded dark:bg-white dark:px-1"
                   />
                 ) : null}
               </div>
             </div>
             <div className="flex items-start p-3">
-              <div className="mr-2 flex-1 text-sm text-gray-600">
+              <div className="mr-2 flex-1 text-sm text-gray-600 dark:text-gray-300">
                 {project.description}
               </div>
               {project.link ? (
@@ -69,7 +74,7 @@ export default function ProjectCard({ project }: Props) {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center rounded bg-blue-600 px-2 py-1 text-xs font-medium text-white transition-colors duration-500 hover:bg-blue-500 hover:shadow-md"
+                  className="flex items-center rounded border border-gray-800 px-2 py-1 text-xs font-medium text-gray-800 transition-colors duration-500 hover:bg-gray-800 hover:text-white dark:border-gray-400 dark:text-gray-100 dark:hover:bg-gray-100 dark:hover:text-gray-900"
                 >
                   Preview <SlArrowRight className="ml-1" />
                 </a>

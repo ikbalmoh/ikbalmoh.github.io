@@ -1,56 +1,49 @@
-import { useState } from 'react'
-import MobileNav from './MobileNav'
+import Magnet from 'components/shared/magnet'
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
+import { BsMoon, BsSun } from 'react-icons/bs'
+import useTheme from 'utils/hooks/useTheme'
 
 export default function Header() {
-  const [active, setActive] = useState<boolean>(false)
-
-  const links = [
-    { id: 'about', label: 'About' },
-    { id: 'work', label: 'Work' }
-  ]
+  const { theme, toggleTheme } = useTheme()
+  const themeLabel = `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`
 
   return (
     <nav
       data-aos="fade-down"
       data-aos-duration="500"
-      className="fixed top-0 z-10 flex h-14 w-full items-center bg-white/40 backdrop-blur-md md:h-16"
+      className="fixed top-0 z-10 flex h-14 w-full items-center bg-white/40 backdrop-blur-md dark:bg-black/40 md:h-16"
     >
-      <div className="mx-auto flex h-14 w-full max-w-none items-center justify-between gap-4 border-b border-gray-300/50 px-4 md:h-16 md:max-w-6xl md:px-5 xl:px-0">
+      <div className="mx-auto flex h-14 w-full max-w-none items-center justify-between gap-4 border-b border-gray-300/50 px-4 dark:border-gray-900/50 md:h-16 md:max-w-6xl md:px-5 xl:px-0">
         <a href="#home" className="w-min select-none md:w-[200px]">
-          <h1 className="bg-gradient-to-r from-black via-blue-900 via-50% to-blue-600 bg-clip-text text-xl font-semibold text-transparent md:text-2xl">
+          <h1 className="bg-gradient-to-r bg-clip-text text-xl font-semibold text-black dark:text-gray-100 md:text-2xl">
             IkbalMoh
           </h1>
         </a>
-        <div className="hidden flex-1 items-center justify-center md:flex md:flex-row">
-          {links.map((link) => (
+        <div className="flex w-min items-center justify-end gap-5">
+          <Magnet padding={10} magnetStrength={4}>
             <a
-              key={link.id}
-              className="relative rounded-md bg-transparent px-5 py-2 text-sm text-gray-500 transition-colors duration-200 hover:bg-gray-200/80 hover:text-gray-700"
-              href={`#${link.id}`}
+              href="https://www.cakeresume.com/ikbalmoh"
+              className="hover:bg-gray-200/40 hover:dark:bg-gray-700/40 px-3 py-1 rounded-md hidden whitespace-nowrap text-sm font-medium text-gray-700 transition-colors duration-200 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white md:block"
+              target="_blank"
+              rel="external noreferrer"
             >
-              {link.label}
+              View Resume
             </a>
-          ))}
-        </div>
-        <div className="flex w-min justify-end md:w-[200px]">
-          <a
-            href="https://www.cakeresume.com/ikbalmoh"
-            target="_blank"
-            className="hidden text-sm text-blue-700 transition-colors duration-500 hover:font-medium hover:text-blue-900 md:block"
-            rel="external noreferrer"
-          >
-            View Resume
-          </a>
+          </Magnet>
           <button
-            className="flex flex-col items-center justify-center md:hidden"
-            onClick={() => setActive(true)}
+            type="button"
+            onClick={toggleTheme}
+            aria-label={themeLabel}
+            title={themeLabel}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-gray-700 transition-colors hover:bg-gray-200/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 dark:text-gray-200 dark:hover:bg-gray-700"
           >
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
-            <div className="my-0.5 h-0.5 w-6 bg-gray-700"></div>
+            {theme === 'dark' ? (
+              <BsSun size={16} aria-hidden="true" />
+            ) : (
+              <BsMoon size={16} aria-hidden="true" />
+            )}
           </button>
         </div>
-        <MobileNav visible={active} onDismiss={() => setActive(false)} />
       </div>
     </nav>
   )
