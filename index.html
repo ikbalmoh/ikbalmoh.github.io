@@ -1,114 +1,91 @@
 <!doctype html>
 <html lang="en">
-  <head class="scroll-smooth">
-    <meta charset="UTF-8" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-    <script>
-      (() => {
-        let theme
-        try {
-          theme = localStorage.getItem('theme')
-        } catch {}
-        const dark = theme === 'dark' ||
-          (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        document.documentElement.classList.toggle('dark', dark)
-        document.querySelector('meta[name="theme-color"]').content = dark ? '#111827' : '#ffffff'
-      })()
-    </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head class="scroll-smooth">
+  <meta charset="UTF-8" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  <script>
+    (() => {
+      let theme
+      try {
+        theme = localStorage.getItem('theme')
+      } catch { }
+      const dark = theme === 'dark' ||
+        (theme !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      document.documentElement.classList.toggle('dark', dark)
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#111827' : '#ffffff'
+    })()
+  </script>
 
-    <!-- Primary SEO -->
-    <title>Ikbal Moh - Frontend Web &amp; Mobile App Expert</title>
-    <meta
-      name="description"
-      content="Ikbal Moh is an Upwork Top Rated Frontend Developer with 7+ years of experience building high-quality web and mobile applications."
-    />
-    <meta
-      name="keywords"
-      content="Ikbal Moh, Frontend Developer, Mobile App Developer, React, Flutter, Upwork Top Rated, Web Developer"
-    />
-    <meta name="author" content="Ikbal Moh" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://ikbalmoh.github.io/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph / Facebook / LinkedIn -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ikbalmoh.github.io/" />
-    <meta
-      property="og:title"
-      content="Ikbal Moh - Frontend Web &amp; Mobile App Expert"
-    />
-    <meta
-      property="og:description"
-      content="Ikbal Moh is an Upwork Top Rated Frontend Developer with 7+ years of experience building high-quality web and mobile applications."
-    />
-    <meta
-      property="og:image"
-      content="https://ikbalmoh.github.io/images/ikbalmoh_rounded.png"
-    />
-    <meta
-      property="og:image:alt"
-      content="Ikbal Moh - Frontend Web &amp; Mobile App Expert"
-    />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="400" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Ikbal Moh" />
+  <!-- Primary SEO -->
+  <title>Ikbal Moh — Full-Stack AI Engineer | ikbal.dev</title>
+  <meta name="description"
+    content="Ikbal Moh is an Upwork Top Rated Full-Stack AI Engineer with 8+ years of experience building scalable web, mobile, and intelligent AI applications." />
+  <meta name="keywords"
+    content="Ikbal Moh, ikbal.dev, Ikbal, Full-Stack AI Engineer, AI Engineer, LLMs, AI Agents, React, Next.js, Flutter, TypeScript, Python, Upwork Top Rated" />
+  <meta name="author" content="Ikbal Moh" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ikbal.dev/" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="https://ikbalmoh.github.io/" />
-    <meta
-      name="twitter:title"
-      content="Ikbal Moh - Frontend Web &amp; Mobile App Expert"
-    />
-    <meta
-      name="twitter:description"
-      content="Ikbal Moh is an Upwork Top Rated Frontend Developer with 7+ years of experience building high-quality web and mobile applications."
-    />
-    <meta
-      name="twitter:image"
-      content="https://ikbalmoh.github.io/images/ikbalmoh_rounded.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Ikbal Moh - Frontend Web &amp; Mobile App Expert"
-    />
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ikbal.dev/" />
+  <meta property="og:title" content="Ikbal Moh — Full-Stack AI Engineer | ikbal.dev" />
+  <meta property="og:description"
+    content="Ikbal Moh is an Upwork Top Rated Full-Stack AI Engineer with 8+ years of experience building scalable web, mobile, and intelligent AI applications." />
+  <meta property="og:image" content="https://ikbal.dev/images/preview.png" />
+  <meta property="og:image:alt" content="Ikbal Moh — Full-Stack AI Engineer" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="ikbal.dev" />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="https://ikbal.dev/" />
+  <meta name="twitter:title" content="Ikbal Moh — Full-Stack AI Engineer | ikbal.dev" />
+  <meta name="twitter:description"
+    content="Ikbal Moh is an Upwork Top Rated Full-Stack AI Engineer with 8+ years of experience building scalable web, mobile, and intelligent AI applications." />
+  <meta name="twitter:image" content="https://ikbal.dev/images/preview.png" />
+  <meta name="twitter:image:alt" content="Ikbal Moh — Full-Stack AI Engineer" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Ikbal Moh",
-        "url": "https://ikbalmoh.github.io/",
-        "image": "https://ikbalmoh.github.io/images/ikbalmoh_rounded.png",
-        "jobTitle": "Frontend Web & Mobile App Developer",
-        "description": "Upwork Top Rated Frontend Developer with 7+ years of experience building high-quality web and mobile applications.",
+        "alternateName": ["Ikbal", "ikbal.dev"],
+        "url": "https://ikbal.dev/",
+        "image": "https://ikbal.dev/images/ikbalmoh_rounded.png",
+        "jobTitle": "Full-Stack AI Engineer",
+        "description": "Upwork Top Rated Full-Stack AI Engineer with 8+ years of experience building scalable web, mobile, and intelligent AI applications.",
         "sameAs": [
           "https://github.com/ikbalmoh",
+          "https://linkedin.com/in/ikbalmoh",
           "https://www.upwork.com/freelancers/~0160370c132851f3c9"
         ]
       }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/index.tsx"></script>
-  </body>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Exo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/index.tsx"></script>
+</body>
+
 </html>

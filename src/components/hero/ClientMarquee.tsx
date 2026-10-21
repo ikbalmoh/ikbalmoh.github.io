@@ -20,11 +20,17 @@ function Clients() {
   return (
     <div className={styles['marquee-track']}>
       {clients.map((client) => (
-        <a key={client.name} href={client.url} target="_blank" rel="noreferrer" className="mx-3 cursor-pointer">
+        <a
+          key={client.name}
+          href={client.url}
+          target="_blank"
+          rel="noreferrer"
+          className="mx-3 cursor-pointer"
+        >
           <img
             src={`/images/clients/${client.name}`}
             alt={client.name}
-            className="h-10 w-auto object-contain dark:brightness-0 dark:invert"
+            className="h-6 md:h-8 w-auto object-contain dark:brightness-0 dark:invert"
           />
         </a>
       ))}

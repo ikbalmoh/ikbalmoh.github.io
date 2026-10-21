@@ -32,9 +32,9 @@ export default function Work() {
         <div className="flex w-full flex-col md:justify-centerpy-5">
           <div className="mx-auto my-5 px-5 text-center" data-aos="fade-up">
             <h1 className="text-center text-3xl text-gray-500 md:text-5xl dark:text-gray-300">
-              My <span className="text-gray-800 dark:text-gray-100">Work</span>
+              <span className="text-gray-800 dark:text-gray-100">Projects</span>
             </h1>
-            <h4 className="mt-5 text-center text-base font-normal text-gray-500 dark:text-gray-300">
+            <h4 className="mt-5 text-center text-base lg:text-lg font-normal text-gray-500 dark:text-gray-300">
               Selected work I've taken on in the past.
             </h4>
           </div>
