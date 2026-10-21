@@ -16,7 +16,7 @@ export default function Header() {
       <div className="mx-auto flex h-14 w-full max-w-none items-center justify-between gap-4 border-b border-gray-300/50 px-4 dark:border-gray-900/50 md:h-16 md:max-w-6xl md:px-5 xl:px-0">
         <a href="#home" className="w-min select-none md:w-[200px]">
           <h1 className="bg-gradient-to-r bg-clip-text text-xl font-semibold text-black dark:text-gray-100 md:text-2xl">
-            IkbalMoh
+            ikbal.dev
           </h1>
         </a>
         <div className="flex w-min items-center justify-end gap-5">

@@ -7,7 +7,7 @@
     "tags": ["flutter"],
     "link": "https://apps.apple.com/us/app/songcry-new-music-near-you/id6760088416",
     "client": "songcry.svg",
-    "gradient": ["#000000","#000000"],
+    "gradient": ["#000000", "#000000"],
     "type": "web"
   },
   {
@@ -18,7 +18,7 @@
     "tags": ["next.js", "react-native"],
     "link": "https://tunezhub.com",
     "client": "tunezhub.svg",
-    "gradient": ["#1EBED4","#14E6CB"],
+    "gradient": ["#1EBED4", "#14E6CB"],
     "type": "web"
   },
   {
@@ -29,20 +29,9 @@
     "tags": ["react-native"],
     "link": "https://apps.apple.com/us/app/verity-mental-health-made-fun/id6510916597",
     "client": "verity.svg",
-    "gradient": ["#412357","#863692"],
+    "gradient": ["#412357", "#863692"],
     "type": "web",
     "scoroll": false
-  },
-  {
-    "title": "BMKG Maritim",
-    "year": 2022,
-    "description": "A brand new BMKG's maritim website, displaying a weather forecasts",
-    "image": "/images/projects/bmkg.jpeg",
-    "tags": ["next.js", "leaflet"],
-    "link": "https://maritim-bmkg.vercel.app",
-    "client": "bmkg.png",
-    "gradient": ["rgb(255 185 27)", "rgb(124 164 255)"],
-    "type": "web"
   },
   {
     "title": "Selleri - Mobile POS",
@@ -64,26 +53,5 @@
     "client": "telkom.png",
     "gradient": ["#ED213A", "#93291E"],
     "type": "web"
-  },
-  {
-    "title": "Pijar Belajar",
-    "year": 2022,
-    "description": "Dashboard for managing Pijar's member schools",
-    "image": "/images/projects/pijar.png",
-    "tags": ["react.js", "redux"],
-    "client": "pijar.png",
-    "gradient": ["#12c2e9", "#c471ed", "#f64f59"],
-    "type": "web"
-  },
-  {
-    "title": "DG Company - Sales App",
-    "year": 2022,
-    "description": "Sales monitor and management App used by the sales team at DGTI",
-    "image": "/images/projects/dg-company.png",
-    "tags": ["react native", "firebase", "redux"],
-    "link": "https://play.google.com/store/apps/details?id=com.dgti.stm",
-    "client": "dgti.png",
-    "gradient": ["rgb(32 174 226)", "#9089fc"],
-    "type": "mobile"
   }
 ]

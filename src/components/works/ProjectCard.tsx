@@ -32,15 +32,25 @@ export default function ProjectCard({ project, featured }: Props) {
             src={project.image}
             alt={project.title}
             className={classNames(
-              'h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-1000 ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-1000 group-hover:duration-[3s]',
-              project.scoroll == false ? '' : (featured ? 'md:group-hover:translate-y-[calc(20rem-100%)]' : 'md:group-hover:translate-y-[calc(12rem-100%)]')
+              'h-auto w-full translate-y-0 rounded-t-md object-contain object-left-top delay-0 duration-[2000ms] ease-in-out group-hover:translate-y-[calc(10rem-100%)] group-hover:delay-[1000] group-hover:duration-[5s]',
+              project.scoroll == false
+                ? ''
+                : featured
+                ? 'md:group-hover:translate-y-[calc(20rem-100%)]'
+                : 'md:group-hover:translate-y-[calc(12rem-100%)]'
             )}
           />
         </div>
       </div>
       <div className="w-full bg-white relative h-24 dark:bg-gray-800 dark:text-gray-100">
         <div className="h-10 px-3 pt-3">
-          <h1 className={featured ? 'text-xl font-semibold' : 'text-lg font-medium'}>{project.title}</h1>
+          <h1
+            className={
+              featured ? 'text-xl font-semibold' : 'text-lg font-medium'
+            }
+          >
+            {project.title}
+          </h1>
         </div>
         <div className="h-14 overflow-hidden">
           <div className="z-0 flex translate-y-0 flex-col delay-500 duration-500 will-change-transform group-hover:-translate-y-14">
@@ -60,7 +70,7 @@ export default function ProjectCard({ project, featured }: Props) {
                   <img
                     src={`/images/clients/${project.client}`}
                     alt={project.client}
-                    className="h-6 w-auto object-contain md:h-8 dark:rounded dark:bg-white dark:px-1"
+                    className="h-6 w-auto object-contain md:h-8"
                   />
                 ) : null}
               </div>
